@@ -2,11 +2,13 @@
   <library name="lib">
     <CLASSES>
       <root url="file://D:/Program Files/Java Libraries/openjfx-14_windows-x64_bin-sdk/javafx-sdk-14/lib" />
+      <root url="file://D:/Program Files/Java Libraries/hibernate-release-5.4.14.Final/hibernate-release-5.4.14.Final/lib/jpa-metamodel-generator" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="file://D:/Program Files/Java Libraries/openjfx-14_windows-x64_bin-sdk/javafx-sdk-14/lib" />
     </SOURCES>
+    <jarDirectory url="file://D:/Program Files/Java Libraries/hibernate-release-5.4.14.Final/hibernate-release-5.4.14.Final/lib/jpa-metamodel-generator" recursive="false" />
     <jarDirectory url="file://D:/Program Files/Java Libraries/openjfx-14_windows-x64_bin-sdk/javafx-sdk-14/lib" recursive="false" />
     <jarDirectory url="file://D:/Program Files/Java Libraries/openjfx-14_windows-x64_bin-sdk/javafx-sdk-14/lib" recursive="false" type="SOURCES" />
   </library>
