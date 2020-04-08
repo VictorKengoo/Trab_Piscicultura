@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Sistema_Piscicultura" target="1.5" />
+      <module name="Sistema_Piscicultura" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
