@@ -1,2 +1,2 @@
-# Trab_Piscicultura_LP2_EngSoftware
+# Trab_Piscicultura
 Repositório destinado às N2 de Linguagem de Programação II e Engenharia de Software
