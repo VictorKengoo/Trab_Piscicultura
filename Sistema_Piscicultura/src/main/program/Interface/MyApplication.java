@@ -10,4 +10,14 @@ public class MyApplication extends Application {
         stage.setTitle("Sistema de Monitoramento");
         stage.show();
     }
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+    }
 }
