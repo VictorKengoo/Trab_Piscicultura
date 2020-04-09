@@ -7,7 +7,9 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class EstouraException {
-    public void RaiseException(String message){
+
+
+    public void RaiseException(String message) {
 
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("AVISO !!!");
@@ -19,4 +21,6 @@ public class EstouraException {
             }
         });
     }
+
+
 }

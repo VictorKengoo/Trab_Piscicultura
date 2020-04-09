@@ -1,4 +1,4 @@
-package java.Repository;
+package main.program.Repository;
 
 public class UsuarioRepository {
 }

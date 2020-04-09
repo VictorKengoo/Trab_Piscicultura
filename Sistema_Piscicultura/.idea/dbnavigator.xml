@@ -24,21 +24,42 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="f9d5d231-82e9-44fc-9a96-c1f15218da71">
-        <schema name="main" object-types="index, view, table, constraint, dataset trigger, column" />
+      <connection connection-id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0">
+        <schema name="main" object-types="constraint, index, table, view, column, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="f9d5d231-82e9-44fc-9a96-c1f15218da71">
-      <console name="Connection" type="STANDARD" schema="main" session="Main" />
+    <connection id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0">
+      <console name="PisciculturaDB" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT*FROM tb_peixes;
+
+DROP TABLE tb_peixes;
+
+CREATE TABLE tb_peixes
+(Id INT PRIMARY KEY, 
+Especie TEXT NOT NULL, 
+MaxTemp REAL NOT NULL, 
+MinTemp REAL NOT NULL, 
+MaxpH REAL NOT NULL, 
+MinpH REAL NOT NULL);
+
+INSERT INTO tb_peixes 
+VALUES(1, 'Tilápia', 32, 27, 8.5, 6);
+
+INSERT INTO tb_peixes  
+VALUES(2, 'Carpa', 20, 16, 7.4, 7); 
+
+commit;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="f9d5d231-82e9-44fc-9a96-c1f15218da71" />
+    <connection id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0" dataset="main.tb_peixes" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -63,9 +84,9 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="f9d5d231-82e9-44fc-9a96-c1f15218da71" active="true">
+      <connection id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0" active="true">
         <database>
-          <name value="Connection" />
+          <name value="PisciculturaDB" />
           <description value="" />
           <database-type value="SQLITE" />
           <config-type value="BASIC" />
@@ -78,7 +99,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="D:\Database\PisciculturaDB.db" schema="main" />
+            <file path="D:\Repositorios\RepositorioFTT_LP2\Piscicultura_LP2_N2B1\Trab_Piscicultura\Piscicultura Database\PisciculturaDB.db" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />
@@ -118,7 +139,7 @@
           <max-connection-pool-size value="7" />
           <alternative-statement-delimiter value="" />
         </details>
-        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+        <object-filters hide-empty-schemas="true" hide-pseudo-columns="false">
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
