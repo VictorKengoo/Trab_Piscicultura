@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.program.Interface.Telas.LoginController">
+    <Button layoutX="261.0" layoutY="289.0" mnemonicParsing="false" onAction="#Login" text="Login">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Button>
+    <TextField fx:id="txtUsername" layoutX="188.0" layoutY="122.0" promptText="Username">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </TextField>
+    <PasswordField fx:id="txtPassword" layoutX="187.0" layoutY="200.0" promptText="Password">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </PasswordField>
+    <Label fx:id="lblStatus" contentDisplay="CENTER" layoutX="54.0" layoutY="58.0" prefHeight="25.0" prefWidth="490.0" text="Status" textAlignment="CENTER" wrapText="true">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+</AnchorPane>
