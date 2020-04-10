@@ -11,22 +11,20 @@ public class Usuario extends Entidade{
     @Enumerated(EnumType.STRING)
     private TipoUsuario tipoUsuario;
 
-    private String Nome;
-    private String CPF;
+    //private String Nome;
+    //private String CPF;
     private String Usuario;
     private String Senha;
 
     //getters
     public TipoUsuario getTipoUsuario() { return tipoUsuario; }
-    public String getNome() { return Nome; }
-    public String getCPF() { return CPF; }
     public String getUsuario() { return Usuario; }
     public String getSenha() { return Senha; }
 
     //setters
     public void setTipoUsuario(TipoUsuario tipoUsuario) { this.tipoUsuario = tipoUsuario; }
-    public void setNome(String nome) { this.Nome = nome; }
-    public void setCPF(String CPF) { this.CPF = CPF; }
+    //public void setNome(String nome) { this.Nome = nome; }
+    //public void setCPF(String CPF) { this.CPF = CPF; }
     public void setUsuario(String usuario) { this.Usuario = usuario; }
     public void setSenha(String senha) { this.Senha = senha; }
 
@@ -36,8 +34,8 @@ public class Usuario extends Entidade{
         EstouraException EE = new EstouraException();
 
         if(tipoUsuario == null){ EE.RaiseException("Tipo Usuário em branco."); }
-        if(Nome.isBlank()){ EE.RaiseException("Nome em branco."); }
-        if(CPF.isBlank()){ EE.RaiseException("CPF em branco."); }
+        //if(Nome.isBlank()){ EE.RaiseException("Nome em branco."); }
+        //if(CPF.isBlank()){ EE.RaiseException("CPF em branco."); }
         if(Usuario.isBlank()){ EE.RaiseException("Usuario em branco."); }
         if(Senha.isBlank()){ EE.RaiseException("Senha em branco."); }
 
