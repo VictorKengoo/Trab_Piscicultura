@@ -23,15 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0">
-        <schema name="main" object-types="view, table" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0">
-      <console name="PisciculturaDB" type="STANDARD" schema="main" session="Main">SELECT*FROM tb_peixes;
+      <console name="PisciculturaDB" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT*FROM tb_peixes;
 
 DROP TABLE tb_peixes;
 
@@ -49,7 +45,7 @@ VALUES(1, 'Tilápia', 32, 27, 8.5, 6);
 INSERT INTO tb_peixes  
 VALUES(2, 'Carpa', 20, 16, 7.4, 7); 
 
-commit;</console>
+commit;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

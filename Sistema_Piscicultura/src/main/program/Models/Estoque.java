@@ -15,6 +15,11 @@ public class Estoque extends Entidade{
     public void setMarca(String marca) { this.Marca = marca; }
     public void setQntEstoque(int qntEstoque) { this.QntEstoque = qntEstoque; }
 
+    public Estoque (String marca, int qtdEstoque) {
+        this.Marca = marca;
+        this.QntEstoque = qtdEstoque;
+    }
+
     //Validações
     @Override
     public void validar() throws Exception {
