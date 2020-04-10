@@ -7,7 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-import org.hibernate.sql.Update;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -97,11 +96,11 @@ public class BaseRepository<T extends Entidade> {
         }
     }
 
-    public void delete(T entity) throws Exception{
+    public void delete(int Id, Class<T> entity) throws Exception{
         Session session = sessionFactory.openSession();
         try{
             session.getTransaction().begin();
-            session.delete(entity);
+            session.delete(String.format("FROM %s WHERE Id = %s", entity.getSimpleName(), Id));
             session.getTransaction().commit();
 
         } catch (Exception e){
