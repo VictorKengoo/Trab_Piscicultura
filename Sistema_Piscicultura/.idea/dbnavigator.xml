@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0">
-        <schema name="main" object-types="view, table" />
+        <schema name="main" object-types="index, constraint, dataset trigger, table, view, column" />
       </connection>
     </loaded-nodes>
   </component>
@@ -51,12 +51,16 @@ VALUES(2, 'Carpa', 20, 16, 7.4, 7);
 
 commit;</console>
     </connection>
+    <connection id="79b0987e-dfdf-451d-973e-f7ac073e05a6">
+      <console name="Connection" type="STANDARD" schema="" session="Main" />
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0" />
+    <connection id="79b0987e-dfdf-451d-973e-f7ac073e05a6" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0" dataset="main.tb_peixes" active-filter-id="EMPTY_FILTER" />
@@ -99,7 +103,7 @@ commit;</console>
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="D:\Repositorios\RepositorioFTT_LP2\Piscicultura_LP2_N2B1\Trab_Piscicultura\Piscicultura Database\PisciculturaDB.db" schema="main" />
+            <file path="C:\Users\guilherme.q.xavier\Documents\N1LP5\N1LP5\Projeto N2 BIM 1\Trab_Piscicultura\Piscicultura Database\PisciculturaDB.db" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />
@@ -140,6 +144,92 @@ commit;</console>
           <alternative-statement-delimiter value="" />
         </details>
         <object-filters hide-empty-schemas="true" hide-pseudo-columns="false">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="79b0987e-dfdf-451d-973e-f7ac073e05a6" active="true">
+        <database>
+          <name value="Connection" />
+          <description value="" />
+          <database-type value="SQLITE" />
+          <config-type value="BASIC" />
+          <database-version value="9999.0" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="FILE" />
+          <host value="localhost" />
+          <port value="1234" />
+          <database value="database" />
+          <files>
+            <file path="sqlite.db" schema="main" />
+          </files>
+          <type value="NONE" />
+          <user value="" />
+          <deprecated-pwd value="" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="false" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="true" />
+          <environment-type value="default" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
