@@ -1,9 +1,11 @@
 package main.program.Interface.Telas;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -17,8 +19,14 @@ import main.program.Models.Tanque;
 public class MenuController {
 
     TableView<Estoque> tabelaEstoque;
-
     TableView<Tanque> tabelaMonitoramento;
+
+    @FXML
+    private Button btnGerenciamento;
+    @FXML
+    private Button btnCadastro;
+    @FXML
+    private Button btnLogout;
 
     Stage stage = new Stage();
     Utils utils = new Utils();
@@ -26,12 +34,12 @@ public class MenuController {
     public void Estoque(ActionEvent event) {
         // coluna Marca
         TableColumn<Estoque, String> colunaMarca = new TableColumn("Marca");
-        colunaMarca.setMinWidth(150);
+        colunaMarca.setMinWidth(200);
         colunaMarca.setCellValueFactory(new PropertyValueFactory<>("Marca"));
 
         // coluna Quantidade
         TableColumn<Estoque, Integer> colunaQtd = new TableColumn("Quantidade");
-        colunaQtd.setMinWidth(150);
+        colunaQtd.setMinWidth(200);
         colunaQtd.setCellValueFactory(new PropertyValueFactory<>("QntEstoque"));
 
         tabelaEstoque = new TableView<>();
@@ -77,22 +85,39 @@ public class MenuController {
     }
 
     public void HistoryData(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        Scene scene = new Scene(root, 200, 400);
+        Parent root = FXMLLoader.load(getClass().getResource("HistoryData.fxml"));
+        Scene scene = new Scene(root);
+        stage.setTitle("History Data");
         stage.setScene(scene);
         stage.show();
     }
 
     public void Gerenciamento(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        Scene scene = new Scene(root, 200, 400);
+        stage = (Stage) btnGerenciamento.getScene().getWindow();
+        stage.close();
+        Parent root = FXMLLoader.load(getClass().getResource("Gerenciador.fxml"));
+        Scene scene = new Scene(root, 350, 500);
+        stage.setTitle("Gerenciamento");
         stage.setScene(scene);
         stage.show();
     }
 
     public void Cadastro(ActionEvent event) throws Exception {
+        stage = (Stage) btnCadastro.getScene().getWindow();
+        stage.close();
         Parent root = FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
-        Scene scene = new Scene(root, 300, 400);
+        Scene scene = new Scene(root, 200, 300);
+        stage.setTitle(null);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void Logout(ActionEvent event) throws Exception {
+        stage = (Stage) btnLogout.getScene().getWindow();
+        stage.close();
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Scene scene = new Scene(root, 350, 300);
+        stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
     }

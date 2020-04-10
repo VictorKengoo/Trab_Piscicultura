@@ -23,19 +23,15 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0">
-        <schema name="main" object-types="index, constraint, dataset trigger, table, view, column" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="b52a1ff3-4c65-4bd4-98d7-5b5e2552c7e0">
-      <console name="PisciculturaDB" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT*FROM Peixe;
+      <console name="PisciculturaDB" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT*FROM tb_peixes;
 
 DROP TABLE tb_peixes;
 
-CREATE TABLE Peixe
+CREATE TABLE tb_peixes
 (Id INT PRIMARY KEY, 
 Especie TEXT NOT NULL, 
 MaxTemp REAL NOT NULL, 
@@ -43,28 +39,13 @@ MinTemp REAL NOT NULL,
 MaxpH REAL NOT NULL, 
 MinpH REAL NOT NULL);
 
-INSERT INTO Peixe 
+INSERT INTO tb_peixes 
 VALUES(1, 'Tilápia', 32, 27, 8.5, 6);
 
-INSERT INTO Peixe 
+INSERT INTO tb_peixes  
 VALUES(2, 'Carpa', 20, 16, 7.4, 7); 
 
-commit;
-
-DROP TABLE Monitoramento;
-
-CREATE TABLE Monitoramento
-(Id INT PRIMARY KEY, 
-Id_Tanque INT NOT NULL, 
-Temperatura REAL NOT NULL, 
-pH REAL NOT NULL, 
-InsertDate TEXT NOT NULL
-);
-
-INSERT INTO Monitoramento
-VALUES(1, 1, 20, 7, datetime('now'));
-
-select * from Monitoramento;]]></console>
+commit;]]></console>
     </connection>
     <connection id="79b0987e-dfdf-451d-973e-f7ac073e05a6">
       <console name="Connection" type="STANDARD" schema="" session="Main" />

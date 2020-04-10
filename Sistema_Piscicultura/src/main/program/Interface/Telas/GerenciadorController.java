@@ -5,15 +5,29 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
+
+import java.awt.*;
 
 public class GerenciadorController {
     @FXML
-    private Stage stage;
+    private Button btnVoltar;
+
+    Stage stage;
 
     public void Gerenciador(ActionEvent event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Gerenciador.fxml"));
         Scene scene = new Scene(root, 300, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void Voltar(ActionEvent event) throws Exception {
+        stage = (Stage) btnVoltar.getScene().getWindow();
+        stage.close();
+        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+        Scene scene = new Scene(root, 300, 475);
         stage.setScene(scene);
         stage.show();
     }

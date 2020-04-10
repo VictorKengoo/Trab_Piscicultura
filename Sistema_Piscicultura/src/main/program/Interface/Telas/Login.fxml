@@ -4,23 +4,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.program.Interface.Telas.LoginController">
-    <Button layoutX="261.0" layoutY="289.0" mnemonicParsing="false" onAction="#Login" text="Login">
+<AnchorPane prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.program.Interface.Telas.LoginController">
+    <Button fx:id="btnLogin" layoutX="140.0" layoutY="216.0" mnemonicParsing="false" onAction="#Login" text="Login">
         <font>
             <Font size="18.0" />
         </font>
     </Button>
-    <TextField fx:id="txtUsername" layoutX="188.0" layoutY="122.0" promptText="Username">
+    <TextField fx:id="txtUsername" layoutX="63.0" layoutY="66.0" promptText="Username">
         <font>
             <Font size="18.0" />
         </font>
     </TextField>
-    <PasswordField fx:id="txtPassword" layoutX="187.0" layoutY="200.0" promptText="Password">
+    <PasswordField fx:id="txtPassword" layoutX="63.0" layoutY="140.0" promptText="Password">
         <font>
             <Font size="18.0" />
         </font>
     </PasswordField>
-    <Label fx:id="lblStatus" contentDisplay="CENTER" layoutX="188.0" layoutY="58.0" prefHeight="27.0" prefWidth="224.0" textAlignment="CENTER" wrapText="true">
+    <Label fx:id="lblStatus" contentDisplay="CENTER" layoutX="63.0" layoutY="14.0" prefHeight="27.0" prefWidth="224.0" textAlignment="CENTER" wrapText="true">
         <font>
             <Font size="18.0" />
         </font>

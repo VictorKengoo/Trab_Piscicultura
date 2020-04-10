@@ -11,12 +11,17 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="41.0" layoutY="99.0" mnemonicParsing="false" onAction="#CadastroTanque" prefHeight="39.0" prefWidth="118.0" text="Tanque">
+      <Button fx:id="btnCadastrarTanque" layoutX="41.0" layoutY="88.0" mnemonicParsing="false" onAction="#CadastroTanque" prefHeight="39.0" prefWidth="118.0" text="Tanque">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="41.0" layoutY="193.0" mnemonicParsing="false" onAction="#CadastroPeixe" prefHeight="39.0" prefWidth="118.0" text="Peixe">
+      <Button fx:id="btnCadastrarPeixe" layoutX="41.0" layoutY="150.0" mnemonicParsing="false" onAction="#CadastroPeixe" prefHeight="39.0" prefWidth="118.0" text="Peixe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnVoltar" layoutX="64.0" layoutY="224.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar">
          <font>
             <Font size="18.0" />
          </font>

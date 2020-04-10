@@ -1,5 +1,6 @@
 package main.program.Interface.Telas;
 
+import javafx.scene.control.Button;
 import main.program.Application.LoginApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +21,10 @@ public class LoginController {
     private TextField txtUsername;
     @FXML
     private TextField txtPassword;
+    @FXML
+    private Button btnLogin;
+
+    Stage stage = new Stage();
 
     public void Login(ActionEvent event) throws Exception {
         /*LoginApp logApp = new LoginApp();
@@ -31,19 +36,18 @@ public class LoginController {
             System.out.print(e.getMessage());
         }*/
 
-
         if (txtUsername.getText().equals("user") && txtPassword.getText().equals("1234")) {
             lblStatus.setText("Status: Success");
-            Stage stage = new Stage();
+            stage = (Stage) btnLogin.getScene().getWindow();
+            stage.close();
             Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-            Scene scene = new Scene(root, 200, 400);
+            Scene scene = new Scene(root, 300, 475);
             stage.setTitle("Menu");
             stage.setScene(scene);
             stage.show();
         } else {
             lblStatus.setText("Status: Failed");
         }
-
     }
 }
 
