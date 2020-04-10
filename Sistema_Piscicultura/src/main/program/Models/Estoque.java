@@ -2,22 +2,25 @@ package main.program.Models;
 
 import main.program.Interface.EstouraException;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Estoque extends Entidade{
     //Declarações
     private String Marca;
-    private Integer QntEstoque;
+    private Integer Quantidade;
 
     //getters
     public String getMarca() { return Marca; }
-    public Integer getQntEstoque() { return QntEstoque; }
+    public Integer getQntEstoque() { return Quantidade; }
 
     //setters
     public void setMarca(String marca) { this.Marca = marca; }
-    public void setQntEstoque(Integer qntEstoque) { this.QntEstoque = qntEstoque; }
+    public void setQntEstoque(Integer qntEstoque) { this.Quantidade = qntEstoque; }
 
     public Estoque (String marca, Integer qtdEstoque) {
         this.Marca = marca;
-        this.QntEstoque = qtdEstoque;
+        this.Quantidade = qtdEstoque;
     }
 
     //Validações
@@ -26,7 +29,7 @@ public class Estoque extends Entidade{
         EstouraException EE = new EstouraException();
 
         if(Marca.isBlank()){ EE.RaiseException("Marca em branco !"); }
-        if(QntEstoque < 0){ EE.RaiseException("Quantidade do estoque inválida."); }
+        if(Quantidade < 0){ EE.RaiseException("Quantidade do estoque inválida."); }
 
     }
 }
