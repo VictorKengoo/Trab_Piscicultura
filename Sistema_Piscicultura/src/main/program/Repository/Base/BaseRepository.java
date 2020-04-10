@@ -6,15 +6,18 @@ import main.program.Models.Entidade;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+import org.hibernate.sql.Update;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BaseRepository<T extends Entidade> {
 
-    EstouraException EE = new EstouraException();
+    private EstouraException EE = new EstouraException();
     protected SessionFactory sessionFactory;
 
     public BaseRepository(){
@@ -36,6 +39,78 @@ public class BaseRepository<T extends Entidade> {
             EE.RaiseException(errors.toString());
 
             return null;
+        }
+    }
+
+    public T add(T entity){
+        Session session = sessionFactory.openSession();
+        try{
+            session.getTransaction().begin();
+            session.saveOrUpdate(entity);
+            session.getTransaction().commit();
+
+            return entity;
+
+        } catch (Exception e){
+            StringWriter errors = new StringWriter();
+            e.printStackTrace(new PrintWriter(errors));
+            EE.RaiseException(errors.toString());
+
+        } finally {
+            if(session != null && session.isOpen()){ session.close(); }
+            return null;
+        }
+    }
+
+    public List<T> list(Class<T> entity){
+        Session session = sessionFactory.openSession();
+
+        try{
+            Query query = session.createQuery("FROM" + entity.getSimpleName());
+            return (List<T>) query.getResultList();
+        } catch (Exception e){
+            StringWriter errors = new StringWriter();
+            e.printStackTrace(new PrintWriter(errors));
+            EE.RaiseException(errors.toString());
+
+            return null;
+        } finally{
+            if(session != null && session.isOpen()){ session.close(); }
+        }
+    }
+
+    public void update(T entity){
+        Session session = sessionFactory.openSession();
+
+        try{
+            session.getTransaction().begin();
+            session.update(entity);
+            session.getTransaction().commit();
+
+        } catch (Exception e){
+            StringWriter errors = new StringWriter();
+            e.printStackTrace(new PrintWriter(errors));
+            EE.RaiseException(errors.toString());
+
+        } finally {
+            if(session != null && session.isOpen()){ session.close(); }
+        }
+    }
+
+    public void delete(T entity) throws Exception{
+        Session session = sessionFactory.openSession();
+        try{
+            session.getTransaction().begin();
+            session.delete(entity);
+            session.getTransaction().commit();
+
+        } catch (Exception e){
+            StringWriter errors = new StringWriter();
+            e.printStackTrace(new PrintWriter(errors));
+            EE.RaiseException(errors.toString());
+
+        } finally {
+            if(session != null && session.isOpen()){ session.close(); }
         }
     }
 }
