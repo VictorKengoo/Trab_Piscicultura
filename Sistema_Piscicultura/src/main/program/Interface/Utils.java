@@ -3,6 +3,7 @@ package main.program.Interface;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import main.program.Models.Estoque;
+import main.program.Models.Tanque;
 
 public class Utils {
 
@@ -19,5 +20,11 @@ public class Utils {
         estoqueList.add(new Estoque("Marca 9", 56));
 
         return estoqueList;
+    }
+
+    public ObservableList<Tanque> getTanque() {
+        ObservableList<Tanque> tanqueList = FXCollections.observableArrayList();
+
+        return tanqueList;
     }
 }

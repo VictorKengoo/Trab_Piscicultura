@@ -5,17 +5,17 @@ import main.program.Interface.EstouraException;
 public class Estoque extends Entidade{
     //Declarações
     private String Marca;
-    private int QntEstoque;
+    private Integer QntEstoque;
 
     //getters
     public String getMarca() { return Marca; }
-    public int getQntEstoque() { return QntEstoque; }
+    public Integer getQntEstoque() { return QntEstoque; }
 
     //setters
     public void setMarca(String marca) { this.Marca = marca; }
-    public void setQntEstoque(int qntEstoque) { this.QntEstoque = qntEstoque; }
+    public void setQntEstoque(Integer qntEstoque) { this.QntEstoque = qntEstoque; }
 
-    public Estoque (String marca, int qtdEstoque) {
+    public Estoque (String marca, Integer qtdEstoque) {
         this.Marca = marca;
         this.QntEstoque = qtdEstoque;
     }
