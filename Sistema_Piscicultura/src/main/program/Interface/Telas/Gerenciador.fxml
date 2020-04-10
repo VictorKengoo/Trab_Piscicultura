@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.program.Interface.Telas.GerenciadorController">
+   <children>
+      <VBox layoutX="124.0" prefHeight="25.0" prefWidth="138.0" AnchorPane.bottomAnchor="387.0" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="0.0" />
+      <TextField layoutX="120.0" layoutY="118.0" prefHeight="17.0" prefWidth="150.0" />
+      <TextField layoutX="120.0" layoutY="76.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField layoutX="120.0" layoutY="163.0" prefWidth="150.0" />
+      <TextField layoutX="120.0" layoutY="209.0" prefWidth="150.0" />
+      <TextField layoutX="120.0" layoutY="314.0" prefWidth="150.0" />
+      <TextField layoutX="120.0" layoutY="251.0" prefWidth="150.0" />
+      <Label layoutX="36.0" layoutY="80.0" text="Texto 1" />
+      <Label layoutX="36.0" layoutY="122.0" text="Texto 2" />
+      <Label layoutX="36.0" layoutY="167.0" text="Texto 3" />
+      <Label layoutX="36.0" layoutY="213.0" text="Texto 4" />
+      <Label layoutX="36.0" layoutY="255.0" text="Texto 5" />
+      <Label layoutX="36.0" layoutY="318.0" text="Total" />
+      <Label layoutX="114.0" layoutY="22.0" text="Gerenciamento">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
