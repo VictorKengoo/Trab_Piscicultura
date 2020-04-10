@@ -28,6 +28,11 @@ public class Usuario extends Entidade{
     public void setUsuario(String usuario) { this.Usuario = usuario; }
     public void setSenha(String senha) { this.Senha = senha; }
 
+    public Usuario (String usuario, String senha) {
+        this.Usuario = usuario;
+        this.Senha = senha;
+    }
+
     //Validações
     @Override
     public void validar() throws Exception {

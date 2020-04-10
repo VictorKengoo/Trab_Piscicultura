@@ -25,6 +25,12 @@ public class Tanque extends Entidade{
     public void setStatus(String Status) { this.Status = Status; }
     public void setVolume(double volume) { this.Volume = volume; }
 
+    public Tanque (Peixe peixe, String status, double volume) {
+        this.Peixe = peixe;
+        this.Status = status;
+        this.Volume = volume;
+    }
+
     //Validações
     @Override
     public void validar() throws Exception {

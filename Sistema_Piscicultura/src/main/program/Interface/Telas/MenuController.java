@@ -91,8 +91,8 @@ public class MenuController {
     }
 
     public void Cadastro(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        Scene scene = new Scene(root, 200, 400);
+        Parent root = FXMLLoader.load(getClass().getResource("Cadastro.fxml"));
+        Scene scene = new Scene(root, 300, 400);
         stage.setScene(scene);
         stage.show();
     }

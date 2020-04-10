@@ -3,6 +3,7 @@ package main.program.Interface;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import main.program.Models.Estoque;
+import main.program.Models.Peixe;
 import main.program.Models.Tanque;
 
 public class Utils {
@@ -24,7 +25,13 @@ public class Utils {
 
     public ObservableList<Tanque> getTanque() {
         ObservableList<Tanque> tanqueList = FXCollections.observableArrayList();
+        Peixe peixe = new Peixe();
+        peixe.setEspecie("dsa");
+        peixe.setMaxpH(12.12);
 
+        /*("Dourado", 23.00,5.90,6.40,7,60);*/
+
+        tanqueList.add(new Tanque(peixe, "OK", 12));
         return tanqueList;
     }
 }
