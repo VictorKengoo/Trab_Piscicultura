@@ -7,24 +7,40 @@ import main.program.Interface.EstouraException;
 public class Peixe extends Entidade {
     //Declarações
     private String Especie;
-    private double MaxTemp;
-    private double MinTemp;
-    private double MaxpH;
-    private double MinpH;
+    private Double MaxTemp;
+    private Double MinTemp;
+    private Double MaxpH;
+    private Double MinpH;
 
     //getters
     public String getEspecie(){ return Especie; }
-    public double getMaxTemp(){ return MaxTemp; }
-    public double getMinTemp(){ return MinTemp; }
-    public double getMaxpH(){ return MaxpH; }
-    public double getMinpH(){ return MinpH; }
+    public Double getMaxTemp(){ return MaxTemp; }
+    public Double getMinTemp(){ return MinTemp; }
+    public Double getMaxpH(){ return MaxpH; }
+    public Double getMinpH(){ return MinpH; }
 
     //setters
     public void setEspecie(String Especie) { this.Especie = Especie; }
-    public void setMaxTemp(double maxTemp) { this.MaxTemp = maxTemp; }
-    public void setMinTemp(double minTemp) { this.MinTemp = minTemp; }
-    public void setMinpH(double minpH) { this.MinpH = minpH; }
-    public void setMaxpH(double maxpH) { this.MaxpH = maxpH; }
+    public void setMaxTemp(Double maxTemp) { this.MaxTemp = maxTemp; }
+    public void setMinTemp(Double minTemp) { this.MinTemp = minTemp; }
+    public void setMinpH(Double minpH) { this.MinpH = minpH; }
+    public void setMaxpH(Double maxpH) { this.MaxpH = maxpH; }
+
+    public Peixe (){
+        this.Especie = "";
+        this.MaxTemp = 0.0;
+        this.MinTemp = 0.0;
+        this.MaxpH = 0.0;
+        this.MinpH = 0.0;
+    }
+
+    public Peixe (String especie, Double maxTemp, Double minTemp, Double maxPh, Double minPh) {
+        this.Especie = especie;
+        this.MaxTemp = maxTemp;
+        this.MinTemp = minTemp;
+        this.MaxpH = maxPh;
+        this.MinpH = minPh;
+    }
 
     //Validações
     @Override

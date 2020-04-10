@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.program.Interface.Telas.CadastroController">
+   <children>
+      <Label layoutX="62.0" layoutY="27.0" text="Cadastrar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="41.0" layoutY="99.0" mnemonicParsing="false" onAction="#CadastroTanque" prefHeight="39.0" prefWidth="118.0" text="Tanque">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="41.0" layoutY="193.0" mnemonicParsing="false" onAction="#CadastroPeixe" prefHeight="39.0" prefWidth="118.0" text="Peixe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

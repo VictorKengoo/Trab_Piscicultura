@@ -96,7 +96,7 @@ public class BaseRepository<T extends Entidade> {
         }
     }
 
-    public void delete(int Id, Class<T> entity) throws Exception{
+    public void delete(Class<T> entity, int Id) throws Exception{
         Session session = sessionFactory.openSession();
         try{
             session.getTransaction().begin();
