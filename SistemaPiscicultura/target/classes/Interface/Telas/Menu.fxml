@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="475.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.MenuController">
+    <Button layoutX="44.0" layoutY="34.0" mnemonicParsing="false" onAction="#Monitoramento" prefHeight="39.0" prefWidth="207.0" text="Monitoramento">
+      <font>
+         <Font size="18.0" />
+      </font></Button>
+    <Button fx:id="btnHistoryData" layoutX="44.0" layoutY="107.0" mnemonicParsing="false" onAction="#HistoryData" prefHeight="39.0" prefWidth="207.0" text="History Data">
+      <font>
+         <Font size="18.0" />
+      </font></Button>
+    <Button layoutX="44.0" layoutY="179.0" mnemonicParsing="false" onAction="#Estoque" prefHeight="39.0" prefWidth="207.0" text="Estoque">
+      <font>
+         <Font size="18.0" />
+      </font></Button>
+    <Button fx:id="btnGerenciamento" layoutX="44.0" layoutY="250.0" mnemonicParsing="false" onAction="#Gerenciamento" prefHeight="39.0" prefWidth="207.0" text="Gerenciamento">
+      <font>
+         <Font size="18.0" />
+      </font></Button>
+    <Button fx:id="btnCadastro" layoutX="44.0" layoutY="324.0" mnemonicParsing="false" onAction="#Cadastro" prefHeight="39.0" prefWidth="207.0" text="Cadastro">
+      <font>
+         <Font size="18.0" />
+      </font></Button>
+   <Button fx:id="btnLogout" layoutX="110.0" layoutY="397.0" mnemonicParsing="false" onAction="#Logout" text="Logout">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+</AnchorPane>
