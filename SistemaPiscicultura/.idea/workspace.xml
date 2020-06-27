@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e58a8dc6-f1ae-4170-91e8-5ba645c639c5" name="Default Changelist" comment="" />
+    <list default="true" id="e58a8dc6-f1ae-4170-91e8-5ba645c639c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/Trab_Pisci.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/program.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/EstouraException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/EstouraException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Consol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Consol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/SistemaPiscicultura.kotlin_module" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SistemaPiscicultura" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -13,6 +26,15 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -22,6 +44,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1aLWDvuvuKgaSdBHeYEjvH8hEmE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,6 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/JAVA LIB/javafx-sdk-11.0.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -36,20 +60,20 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\src\main\program\Interface" />
-      <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\target" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Repository.Base" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\src\main\resources" />
       <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\target\classes" />
       <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\src\main\program" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Repository.Base" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\src\main\program\Interface" />
+      <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\target" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.MainConsol">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Interface.Main" />
       <module name="SistemaPiscicultura" />
@@ -82,10 +106,49 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Comentarios" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Comentarios" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586552445644">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="618" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593217726138">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="618" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593217726138" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586543662123" />
     <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1586552445644" />
     <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586538080009">
@@ -100,33 +163,46 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="715" y="283" key="#xdebugger.evaluate/0.0.1920.1160@0.0.1920.1160" timestamp="1586561636842" />
+    <state x="746" y="119" key="CommitChangelistDialog2" timestamp="1593220458432">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="746" y="119" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593220458432" />
     <state width="425" height="466" key="DebuggerActiveHint" timestamp="1586542208032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="425" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1586542208032" />
-    <state x="666" y="291" key="FileChooserDialogImpl" timestamp="1586551198873">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="714" y="235" key="DetectedRootsChooserDialog" timestamp="1593218191968">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="714" y="235" key="DetectedRootsChooserDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593218191968" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1593218246990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593218246990" />
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586516069651" />
     <state x="666" y="291" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1586551198873" />
-    <state width="1877" height="230" key="GridCell.Tab.0.bottom" timestamp="1586573582852">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1877" height="218" key="GridCell.Tab.0.bottom" timestamp="1593219714523">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593219714523" />
     <state width="1877" height="386" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586550901306" />
     <state width="1877" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1586573582852" />
-    <state width="1877" height="230" key="GridCell.Tab.0.center" timestamp="1586573582852">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1877" height="218" key="GridCell.Tab.0.center" timestamp="1593219714523">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="218" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593219714523" />
     <state width="1877" height="386" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586550901306" />
     <state width="1877" height="230" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1586573582852" />
-    <state width="1877" height="230" key="GridCell.Tab.0.left" timestamp="1586573582852">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1877" height="218" key="GridCell.Tab.0.left" timestamp="1593219714523">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="218" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593219714523" />
     <state width="1877" height="386" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586550901306" />
     <state width="1877" height="230" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1586573582852" />
-    <state width="1877" height="230" key="GridCell.Tab.0.right" timestamp="1586573582852">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1877" height="218" key="GridCell.Tab.0.right" timestamp="1593219714523">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="218" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593219714523" />
     <state width="1877" height="386" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586550901306" />
     <state width="1877" height="230" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1586573582852" />
     <state width="1877" height="396" key="GridCell.Tab.1.bottom" timestamp="1586573582846">
@@ -153,15 +229,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="490" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586525743167" />
-    <state x="440" y="105" key="SettingsEditor" timestamp="1586551215827">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1593218251184">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593218251184" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586543654244" />
     <state x="440" y="105" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1586551215827" />
-    <state x="656" y="404" key="com.intellij.ide.util.TipDialog" timestamp="1586562239223">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="656" y="362" key="com.intellij.ide.util.TipDialog" timestamp="1593217457366">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="656" y="362" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593217457366" />
     <state x="656" y="404" key="com.intellij.ide.util.TipDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1586562239223" />
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593218392216">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593218392216" />
     <state x="536" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586538563738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -179,22 +261,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/program/Interface/EstouraException.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/program/Repository/Base/BaseRepository.java</url>
           <line>54</line>
           <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/program/Interface/EstouraException.java</url>
-          <line>8</line>
-          <properties class="Interface.EstouraException" method="RaiseException">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

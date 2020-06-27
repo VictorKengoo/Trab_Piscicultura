@@ -18,7 +18,7 @@ public class EstouraException {
             }
         });
     }
-
+//comentando este comentario
     public void RaiseOK(String message) {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
