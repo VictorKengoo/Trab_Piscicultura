@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e58a8dc6-f1ae-4170-91e8-5ba645c639c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/Trab_Pisci.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/program.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/EstouraException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/EstouraException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Consol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Consol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/SistemaPiscicultura.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +96,14 @@
       <option name="presentableId" value="Default" />
       <updated>1586515238659</updated>
     </task>
+    <task id="LOCAL-00001" summary="root e comment no estoura, testando branch">
+      <created>1593220512565</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593220512565</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +144,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="root e comment no estoura, testando branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="root e comment no estoura, testando branch" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="618" y="254" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593217726138">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -163,10 +167,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="715" y="283" key="#xdebugger.evaluate/0.0.1920.1160@0.0.1920.1160" timestamp="1586561636842" />
-    <state x="746" y="119" key="CommitChangelistDialog2" timestamp="1593220458432">
+    <state x="746" y="119" key="CommitChangelistDialog2" timestamp="1593220511665">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="746" y="119" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593220458432" />
+    <state x="746" y="119" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593220511665" />
     <state width="425" height="466" key="DebuggerActiveHint" timestamp="1586542208032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
