@@ -1,7 +1,7 @@
 package Application;
 
-import Models.Estoque;
 import Repository.EstoqueRepository;
+import Models.Estoque;
 
 
 public class EstoqueApp extends BaseApp<Estoque> {

@@ -3,11 +3,9 @@ package Interface;
 import Application.*;
 import Models.*;
 
-import java.io.Console;
-import java.text.DateFormat;
 import java.util.Date;
 
-public class Consol {
+public class Console {
     public static void main(String[] args) throws Exception {
 
         Usuario _User = new Usuario();

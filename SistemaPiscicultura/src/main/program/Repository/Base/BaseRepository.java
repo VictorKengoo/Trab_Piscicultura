@@ -10,8 +10,6 @@ import org.hibernate.query.Query;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class BaseRepository<T extends Entidade> {
 

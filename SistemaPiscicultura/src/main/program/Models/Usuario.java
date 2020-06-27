@@ -1,9 +1,8 @@
 package Models;
 
 import Interface.EstouraException;
-import Models.Enums.TipoUsuario;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
 
 @Entity
