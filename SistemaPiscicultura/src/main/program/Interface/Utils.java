@@ -3,14 +3,11 @@ package Interface;
 import Application.EstoqueApp;
 import Application.PeixeApp;
 import Application.TanqueApp;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import Models.Estoque;
 import Models.Peixe;
 import Models.Tanque;
-
-import java.util.List;
-import java.util.Map;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Utils {
 
@@ -36,10 +33,10 @@ public class Utils {
         var lista = tanqueApp.getAll(Tanque.class);
         Peixe peixe = new Peixe();
 
-        for(Tanque tanque : lista) {
-            for(Peixe p : peixeApp.getAll(Peixe.class)) {
-                if (p.id == tanque.getPeixe().id);
-                    peixe = p;
+        for (Tanque tanque : lista) {
+            for (Peixe p : peixeApp.getAll(Peixe.class)) {
+                if (p.id == tanque.getPeixe().id) ;
+                peixe = p;
             }
             tanqueList.add(new Tanque(peixe.getEspecie(), tanque.getStatus(), tanque.getVolume()));
         }

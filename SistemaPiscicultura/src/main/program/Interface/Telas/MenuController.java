@@ -1,6 +1,8 @@
 package Interface.Telas;
 
-import Models.Peixe;
+import Interface.Utils;
+import Models.Estoque;
+import Models.Tanque;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +14,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import Models.Estoque;
-import Interface.Utils;
-import Models.Tanque;
 
 
 public class MenuController {

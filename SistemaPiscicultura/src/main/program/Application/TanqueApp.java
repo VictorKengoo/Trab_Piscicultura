@@ -5,7 +5,9 @@ import Repository.TanqueRepository;
 
 public class TanqueApp extends BaseApp<Tanque> {
 
-    private TanqueRepository _tanqueRepository;
+    private final TanqueRepository _tanqueRepository;
 
-    public TanqueApp() { _tanqueRepository = new TanqueRepository(); }
+    public TanqueApp() {
+        _tanqueRepository = new TanqueRepository();
+    }
 }

@@ -63,7 +63,7 @@ public class CadastroTanqueController {
                 peixe = p;
             }
         }
-        Tanque tanque = new Tanque(peixe, "OK",  Double.parseDouble(txtVolumeTanque.getText()));
+        Tanque tanque = new Tanque(peixe, "OK", Double.parseDouble(txtVolumeTanque.getText()));
 
         try {
             tanqueApp.Adicionar(tanque);

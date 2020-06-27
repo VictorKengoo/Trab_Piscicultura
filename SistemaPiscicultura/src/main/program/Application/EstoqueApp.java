@@ -6,7 +6,7 @@ import Repository.EstoqueRepository;
 
 public class EstoqueApp extends BaseApp<Estoque> {
 
-    private EstoqueRepository _estoqueRepository;
+    private final EstoqueRepository _estoqueRepository;
 
     public EstoqueApp() {
         _estoqueRepository = new EstoqueRepository();

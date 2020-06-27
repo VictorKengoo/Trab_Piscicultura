@@ -5,7 +5,9 @@ import Repository.PeixeRepository;
 
 public class PeixeApp extends BaseApp<Peixe> {
 
-    private PeixeRepository _peixeRepository;
+    private final PeixeRepository _peixeRepository;
 
-    public PeixeApp() { _peixeRepository = new PeixeRepository();}
+    public PeixeApp() {
+        _peixeRepository = new PeixeRepository();
+    }
 }

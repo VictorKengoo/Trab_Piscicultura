@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
@@ -5,26 +6,26 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="300.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.CadastroController">
-   <children>
-      <Label layoutX="62.0" layoutY="27.0" text="Cadastrar">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnCadastrarTanque" layoutX="41.0" layoutY="88.0" mnemonicParsing="false" onAction="#CadastroTanque" prefHeight="39.0" prefWidth="118.0" text="Tanque">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnCadastrarPeixe" layoutX="41.0" layoutY="150.0" mnemonicParsing="false" onAction="#CadastroPeixe" prefHeight="39.0" prefWidth="118.0" text="Peixe">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnVoltar" layoutX="64.0" layoutY="224.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-   </children>
+    <children>
+        <Label layoutX="62.0" layoutY="27.0" text="Cadastrar">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnCadastrarTanque" layoutX="41.0" layoutY="88.0" mnemonicParsing="false" onAction="#CadastroTanque" prefHeight="39.0" prefWidth="118.0" text="Tanque">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnCadastrarPeixe" layoutX="41.0" layoutY="150.0" mnemonicParsing="false" onAction="#CadastroPeixe" prefHeight="39.0" prefWidth="118.0" text="Peixe">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnVoltar" layoutX="64.0" layoutY="224.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

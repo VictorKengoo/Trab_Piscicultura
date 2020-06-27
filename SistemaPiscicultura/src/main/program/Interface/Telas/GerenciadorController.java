@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.awt.*;
 
 public class GerenciadorController {
     @FXML
@@ -31,4 +30,4 @@ public class GerenciadorController {
         stage.setScene(scene);
         stage.show();
     }
-}
+} 

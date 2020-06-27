@@ -27,6 +27,7 @@ public class CadastroController {
         stage.setScene(scene);
         stage.show();
     }
+
     public void CadastroTanque(ActionEvent event) throws Exception {
         stage = (Stage) btnCadastrarTanque.getScene().getWindow();
         stage.close();
@@ -36,6 +37,7 @@ public class CadastroController {
         stage.setScene(scene);
         stage.show();
     }
+
     public void Voltar(ActionEvent event) throws Exception {
         stage = (Stage) btnVoltar.getScene().getWindow();
         stage.close();

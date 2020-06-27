@@ -3,8 +3,6 @@ package Interface;
 import Application.*;
 import Models.*;
 
-import java.io.Console;
-import java.text.DateFormat;
 import java.util.Date;
 
 public class Consol {
@@ -23,8 +21,8 @@ public class Consol {
         System.out.println("Logou");
 
         var userList = _usuarioApp.getAll(Usuario.class);
-        for(Usuario user : userList){
-            System.out.println("User: "+user.getUsuario()+" Senha: "+user.getSenha());
+        for (Usuario user : userList) {
+            System.out.println("User: " + user.getUsuario() + " Senha: " + user.getSenha());
         }
         System.out.println("RetornouUsers");
 
@@ -40,7 +38,7 @@ public class Consol {
 
 
         PeixeApp _peixeApp = new PeixeApp();
-        Peixe _peixe = new Peixe("OUTRO peixe", 7.5,8.4,9.7,6.5);
+        Peixe _peixe = new Peixe("OUTRO peixe", 7.5, 8.4, 9.7, 6.5);
         _peixeApp.Adicionar(_peixe);
 
         TanqueApp _tanqueApp = new TanqueApp();
@@ -48,9 +46,9 @@ public class Consol {
         _tanqueApp.Adicionar(_tanque);
 
 
-        Estoque _estoque = new Estoque("Comida1",20);
-        Estoque _estoque2 = new Estoque("Comida2",2116);
-        Estoque _estoque3 = new Estoque("comida3",2020);
+        Estoque _estoque = new Estoque("Comida1", 20);
+        Estoque _estoque2 = new Estoque("Comida2", 2116);
+        Estoque _estoque3 = new Estoque("comida3", 2020);
         EstoqueApp _estoqueApp = new EstoqueApp();
         _estoqueApp.Adicionar(_estoque);
         _estoqueApp.Adicionar(_estoque2);
@@ -58,8 +56,8 @@ public class Consol {
         System.out.println("AdicionouEstoque");
 
         var estoqueList = _estoqueApp.getAll(Estoque.class);
-        for(Estoque est : estoqueList){
-            System.out.println("Marca: "+est.getMarca()+" Qtd: "+est.getQuantidade());
+        for (Estoque est : estoqueList) {
+            System.out.println("Marca: " + est.getMarca() + " Qtd: " + est.getQuantidade());
         }
         System.out.println("RetornouEstoques");
     }
