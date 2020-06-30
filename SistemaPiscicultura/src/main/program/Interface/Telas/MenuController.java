@@ -85,9 +85,10 @@ public class MenuController {
     }
 
     public void HistoryData(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("HistoryData.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("EscolheTanque.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("HistoryData.fxml"));
         Scene scene = new Scene(root);
-        stage.setTitle("History Data");
+        stage.setTitle("Selecione o Tanque");
         stage.setScene(scene);
         stage.show();
     }
