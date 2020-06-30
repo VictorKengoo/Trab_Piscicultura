@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e58a8dc6-f1ae-4170-91e8-5ba645c639c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/TesteUnitario/Application/LoginAppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/TesteUnitario/Models/EstoqueTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/TesteUnitario/Application/UsuarioMock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/BaseApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/EstoqueApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/EstoqueApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Consol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/GerenciadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/GerenciadorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/HistoryDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/HistoryDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Models/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Repository/Base/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/Base/BaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/BaseApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/BaseApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Consol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/GerenciadorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/GerenciadorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/HistoryDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/HistoryDataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/SistemaPiscicultura.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Repository/Base/BaseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Repository/Base/BaseRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TesteUnitario/Application/LoginAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TesteUnitario/Application/LoginAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Application/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/LoginApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,7 +56,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="Application.LoginApp" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="D:/Program Files/Java Libraries/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -86,13 +70,6 @@
       <recent name="Application" />
       <recent name="Models" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\src\main\program\Interface" />
-      <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\target" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Repository.Base" />
     </key>
@@ -100,6 +77,14 @@
       <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\src\main\resources" />
       <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\target\classes" />
       <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\src\main\program" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="Application.LoginApp" />
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\src\main\program\Interface" />
+      <recent name="C:\Users\T-Gamer\IdeaProjects\SistemaPiscicultura\target" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -136,7 +121,19 @@
       <option name="presentableId" value="Default" />
       <updated>1586515238659</updated>
     </task>
+    <task id="LOCAL-00001" summary="Adicionados testes unitarios de LoginAppTest e EstoqueTest">
+      <created>1593234662377</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593234662377</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adicionados testes unitarios de LoginAppTest e EstoqueTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionados testes unitarios de LoginAppTest e EstoqueTest" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593218888627">
@@ -145,10 +142,11 @@
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586543662123" />
     <state x="414" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593218888627" />
     <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1586552445644" />
-    <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586538080009">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="689" y="316" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593474871242">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586538080009" />
+    <state x="689" y="316" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593474871242" />
     <state x="808" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1588989495903">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -161,10 +159,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="715" y="283" key="#xdebugger.evaluate/0.0.1920.1160@0.0.1920.1160" timestamp="1586561636842" />
-    <state x="523" y="134" key="CommitChangelistDialog2" timestamp="1593234636348">
+    <state x="523" y="134" key="CommitChangelistDialog2" timestamp="1593234660590">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="523" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593234636348" />
+    <state x="523" y="134" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593234660590" />
     <state width="425" height="466" key="DebuggerActiveHint" timestamp="1586542208032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -219,32 +217,33 @@
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586545662599" />
     <state width="1877" height="396" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1586573582846" />
-    <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1586525743167">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="490" y="182" key="Maven.ArtifactSearchDialog" timestamp="1593474622145">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="490" y="175" key="Maven.ArtifactSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586525743167" />
+    <state x="490" y="182" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593474622145" />
     <state x="440" y="98" key="SettingsEditor" timestamp="1593228244074">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586543654244" />
     <state x="440" y="98" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593228244074" />
     <state x="440" y="105" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1586551215827" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1593223722574">
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1593476741616">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593223722574" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593476741616" />
     <state x="656" y="404" key="com.intellij.ide.util.TipDialog" timestamp="1586562239223">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="656" y="404" key="com.intellij.ide.util.TipDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1586562239223" />
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593223302037">
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593474771517">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593223302037" />
-    <state x="1243" y="165" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1593234561297">
+    <state x="769" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593474771517" />
+    <state x="689" y="284" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1593474874952">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1243" y="165" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593234561297" />
+    <state x="689" y="284" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593474874952" />
     <state x="536" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586538563738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
