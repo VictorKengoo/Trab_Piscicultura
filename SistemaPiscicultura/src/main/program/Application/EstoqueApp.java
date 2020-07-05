@@ -3,6 +3,8 @@ package Application;
 import Interface.EstouraException;
 import Models.Estoque;
 import Repository.EstoqueRepository;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 

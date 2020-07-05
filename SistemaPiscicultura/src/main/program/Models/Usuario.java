@@ -1,6 +1,12 @@
 package Models;
 
-import javax.persistence.Entity;
+import Application.EstoqueApp;
+import Application.UsuarioApp;
+import Interface.EstouraException;
+import Models.Enums.TipoUsuario;
+
+import javax.persistence.*;
+import java.util.ArrayList;
 
 
 @Entity

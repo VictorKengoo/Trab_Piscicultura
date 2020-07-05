@@ -3,6 +3,11 @@ package Application;
 import Interface.EstouraException;
 import Models.Peixe;
 import Repository.PeixeRepository;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
@@ -22,7 +27,7 @@ public class PeixeApp extends BaseApp<Peixe> {
 
         for (String especieExistente : listEspecieExistente) {
             if (especie.toLowerCase().trim().equals(especieExistente.toLowerCase().trim())) {
-                //EE.RaiseException("Já existe um peixe registrado com esta espécie.");
+                EE.RaiseException("Já existe um peixe registrado com esta espécie.");
                 return true;
             }
         }

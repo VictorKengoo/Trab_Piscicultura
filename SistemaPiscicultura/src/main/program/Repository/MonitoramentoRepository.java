@@ -1,7 +1,13 @@
 package Repository;
 
-import Models.Monitoramento;
 import Repository.Base.BaseRepository;
+import org.hibernate.Session;
+import Models.Monitoramento;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class MonitoramentoRepository extends BaseRepository<Monitoramento> {
 
