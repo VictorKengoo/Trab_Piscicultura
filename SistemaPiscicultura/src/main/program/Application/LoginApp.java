@@ -1,11 +1,12 @@
 package Application;
 
+
 import Models.Usuario;
-import Repository.*;
+import Repository.UsuarioRepository;
 
 public class LoginApp {
 
-    private UsuarioRepository _usuarioRepository;
+    private final UsuarioRepository _usuarioRepository;
 
     public LoginApp() {
         _usuarioRepository = new UsuarioRepository();

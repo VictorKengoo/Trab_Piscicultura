@@ -11,8 +11,9 @@ import java.util.ArrayList;
 
 public class TanqueApp extends BaseApp<Tanque> {
 
-    private TanqueRepository _tanqueRepository;
+    private final TanqueRepository _tanqueRepository;
 
+<<<<<<< HEAD
     public static String errorMsg = "";
 
     public static Boolean showAtentionPopUp = false;
@@ -71,4 +72,9 @@ public class TanqueApp extends BaseApp<Tanque> {
         return false;
     }
 
+=======
+    public TanqueApp() {
+        _tanqueRepository = new TanqueRepository();
+    }
+>>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
 }

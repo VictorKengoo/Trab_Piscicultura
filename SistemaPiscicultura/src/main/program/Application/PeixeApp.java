@@ -13,8 +13,9 @@ import java.util.ArrayList;
 
 public class PeixeApp extends BaseApp<Peixe> {
 
-    private PeixeRepository _peixeRepository;
+    private final PeixeRepository _peixeRepository;
 
+<<<<<<< HEAD
     public PeixeApp() { _peixeRepository = new PeixeRepository();}
 
     public boolean hasDuplicate(String especie) {
@@ -32,5 +33,9 @@ public class PeixeApp extends BaseApp<Peixe> {
             }
         }
         return false;
+=======
+    public PeixeApp() {
+        _peixeRepository = new PeixeRepository();
+>>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
     }
 }

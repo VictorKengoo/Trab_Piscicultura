@@ -12,24 +12,26 @@ import java.io.StringWriter;
 public class UsuarioRepository extends BaseRepository<Usuario> {
 
 
-    public Usuario getUserByUsername(Usuario user){
+    public Usuario getUserByUsername(Usuario user) {
         Session session = sessionFactory.openSession();
         EstouraException EE = new EstouraException();
 
-        try{
+        try {
             Query query = session.createQuery("FROM Usuario WHERE Usuario = :Usuario");
             query.setParameter("Usuario", user.getUsuario());
             return (Usuario) query.uniqueResult();
 
-        } catch (Exception e){
+        } catch (Exception e) {
             StringWriter errors = new StringWriter();
             e.printStackTrace(new PrintWriter(errors));
             EE.RaiseException(errors.toString());
 
             return null;
 
-        } finally{
-            if(session != null && session.isOpen()){ session.close(); }
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
         }
     }
 

@@ -271,6 +271,7 @@ public class CadastroTanqueController {
                 ex.RaiseException(e.getMessage());
             }
         }
+<<<<<<< HEAD
     }
 
     public Boolean ValidarCamposTanque() {
@@ -297,6 +298,21 @@ public class CadastroTanqueController {
 
         if(hasInvalidField) {
             ex.RaiseException(erros);
+=======
+        Tanque tanque = new Tanque(peixe, "OK", Double.parseDouble(txtVolumeTanque.getText()));
+
+        try {
+            tanqueApp.Adicionar(tanque);
+            ex.RaiseOK("Tanque cadastrado com sucesso!");
+            stage = (Stage) btnAdicionarTanque.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("CadastroTanque.fxml"));
+            Scene scene = new Scene(root, 450, 300);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
+>>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
         }
 
         return hasInvalidField;

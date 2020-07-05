@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class MonitoramentoApp extends BaseApp<Monitoramento> {
 
-    private MonitoramentoRepository _monitoramentoRepository;
+    private final MonitoramentoRepository _monitoramentoRepository;
 
     public MonitoramentoApp() {
         _monitoramentoRepository = new MonitoramentoRepository();

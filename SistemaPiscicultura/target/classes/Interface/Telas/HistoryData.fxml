@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -15,4 +16,17 @@
          </font>
       </Label>
    </children>
+=======
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<AnchorPane fx:id="anchorPane" maxHeight="400.0" maxWidth="1000.0" minHeight="400.0" minWidth="1000.0"
+            prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.HistoryDataController">
+    <children>
+        <Pane fx:id="paneView1" maxHeight="400.0" maxWidth="500.0" minHeight="400.0" minWidth="500.0" prefHeight="400.0"
+              prefWidth="500.0"/>
+        <Pane fx:id="paneView2" layoutX="500.0" maxHeight="400.0" maxWidth="500.0" minHeight="400.0" minWidth="500.0"
+              prefHeight="400.0" prefWidth="500.0"/>
+    </children>
+>>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
 </AnchorPane>

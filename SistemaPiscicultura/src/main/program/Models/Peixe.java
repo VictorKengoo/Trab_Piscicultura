@@ -19,20 +19,56 @@ public class Peixe extends Entidade {
     private Double MinpH;
 
     //getters
-    public String getEspecie(){ return Especie; }
-    public Double getMaxTemp(){ return MaxTemp; }
-    public Double getMinTemp(){ return MinTemp; }
-    public Double getMaxpH(){ return MaxpH; }
-    public Double getMinpH(){ return MinpH; }
+    public String getEspecie() {
+        return Especie;
+    }
+
+    public Double getMaxTemp() {
+        return MaxTemp;
+    }
+
+    public Double getMinTemp() {
+        return MinTemp;
+    }
+
+    public Double getMaxpH() {
+        return MaxpH;
+    }
+
+    public Double getMinpH() {
+        return MinpH;
+    }
 
     //setters
+<<<<<<< HEAD
     public void setEspecie(String Especie) {this.Especie = Especie; }
     public void setMaxTemp(Double maxTemp) { this.MaxTemp = maxTemp; }
     public void setMinTemp(Double minTemp) { this.MinTemp = minTemp; }
     public void setMinpH(Double minpH) { this.MinpH = minpH; }
     public void setMaxpH(Double minpH) { this.MaxpH = minpH; }
+=======
+    public void setEspecie(String Especie) {
+        this.Especie = Especie;
+    }
 
-    public Peixe (){
+    public void setMaxTemp(Double maxTemp) {
+        this.MaxTemp = maxTemp;
+    }
+
+    public void setMinTemp(Double minTemp) {
+        this.MinTemp = minTemp;
+    }
+
+    public void setMinpH(Double minpH) {
+        this.MinpH = minpH;
+    }
+
+    public void setMaxpH(Double maxpH) {
+        this.MaxpH = maxpH;
+    }
+>>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
+
+    public Peixe() {
         this.Especie = "";
         this.MaxTemp = 0.0;
         this.MinTemp = 0.0;
@@ -40,7 +76,11 @@ public class Peixe extends Entidade {
         this.MinpH = 0.0;
     }
 
+<<<<<<< HEAD
     public Peixe (String especie, Double maxTemp, Double minTemp, Double maxPh, Double minPh) throws Exception {
+=======
+    public Peixe(String especie, Double maxTemp, Double minTemp, Double maxPh, Double minPh) {
+>>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
         this.Especie = especie;
         this.MaxTemp = maxTemp;
         this.MinTemp = minTemp;
@@ -55,6 +95,7 @@ public class Peixe extends Entidade {
         String erros = "";
         boolean hasError = false;
 
+<<<<<<< HEAD
         if((MinpH < 0 || MinpH > 14) || (MaxpH < 0 || MaxpH > 14)) {
             throw new Exception("pH deve estar entre 0 e 14.\n");
         }
@@ -65,6 +106,13 @@ public class Peixe extends Entidade {
 
         if(hasError) {
             throw new Exception(erros);
+=======
+        if (Especie.isBlank()) {
+            EE.RaiseException("Espécie em branco.");
+        }
+        if (MinpH < 0 || MaxpH > 14) {
+            EE.RaiseException("Valor de pH inválido.");
+>>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
         }
     }
 
