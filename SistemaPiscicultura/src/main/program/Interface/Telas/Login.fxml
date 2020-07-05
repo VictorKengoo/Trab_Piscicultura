@@ -10,12 +10,12 @@
             <Font size="18.0" />
         </font>
     </Button>
-    <TextField fx:id="txtUsername" layoutX="63.0" layoutY="80.0" promptText="Username">
+    <TextField fx:id="txtUsername" layoutX="63.0" layoutY="80.0" promptText="Usuário">
         <font>
             <Font size="18.0" />
         </font>
     </TextField>
-    <PasswordField fx:id="txtPassword" layoutX="63.0" layoutY="154.0" promptText="Password">
+    <PasswordField fx:id="txtPassword" layoutX="63.0" layoutY="154.0" onKeyPressed="#checkKeyReleased" onKeyReleased="#checkKeyReleased" onKeyTyped="#checkKeyReleased" promptText="Senha">
         <font>
             <Font size="18.0" />
         </font>
@@ -25,4 +25,6 @@
             <Font size="18.0" />
         </font>
     </Label>
+   <Label layoutX="64.0" layoutY="55.0" text="Usuário:" />
+   <Label layoutX="64.0" layoutY="129.0" text="Senha: " />
 </AnchorPane>

@@ -10,8 +10,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class UsuarioRepository extends BaseRepository<Usuario> {
-
-
     public Usuario getUserByUsername(Usuario user){
         Session session = sessionFactory.openSession();
         EstouraException EE = new EstouraException();
@@ -32,5 +30,4 @@ public class UsuarioRepository extends BaseRepository<Usuario> {
             if(session != null && session.isOpen()){ session.close(); }
         }
     }
-
 }

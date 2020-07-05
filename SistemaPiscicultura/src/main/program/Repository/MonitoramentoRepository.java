@@ -1,17 +1,11 @@
 package Repository;
 
-import Repository.Base.BaseRepository;
-import org.hibernate.Session;
 import Models.Monitoramento;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import Repository.Base.BaseRepository;
 
 public class MonitoramentoRepository extends BaseRepository<Monitoramento> {
 
-    public List<Monitoramento> listTOP(){
+    /*public List<Monitoramento> listTOP(){
         Session session = sessionFactory.openSession();
 
         try{
@@ -46,5 +40,5 @@ public class MonitoramentoRepository extends BaseRepository<Monitoramento> {
         } finally{
             if(session != null && session.isOpen()){ session.close(); }
         }
-    }
+    }*/
 }

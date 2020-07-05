@@ -4,28 +4,39 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="475.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.MenuController">
-    <Button layoutX="44.0" layoutY="34.0" mnemonicParsing="false" onAction="#Monitoramento" prefHeight="39.0" prefWidth="207.0" text="Monitoramento">
+<AnchorPane prefHeight="300.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.MenuController">
+    <Button layoutX="44.0" layoutY="35.0" mnemonicParsing="false" onAction="#Monitoramento" prefHeight="39.0" prefWidth="207.0" text="Monitoramento">
       <font>
          <Font size="18.0" />
       </font></Button>
-    <Button fx:id="btnHistoryData" layoutX="44.0" layoutY="107.0" mnemonicParsing="false" onAction="#HistoryData" prefHeight="39.0" prefWidth="207.0" text="History Data">
+    <Button fx:id="btnRelatorio" layoutX="279.0" layoutY="35.0" mnemonicParsing="false" onAction="#Relatorio" prefHeight="39.0" prefWidth="207.0" text="Dados Históricos">
       <font>
          <Font size="18.0" />
       </font></Button>
-    <Button layoutX="44.0" layoutY="179.0" mnemonicParsing="false" onAction="#Estoque" prefHeight="39.0" prefWidth="207.0" text="Estoque">
+    <Button fx:id="btnEstoque" layoutX="44.0" layoutY="98.0" mnemonicParsing="false" onAction="#Estoque" prefHeight="39.0" prefWidth="207.0" text="Estoque">
       <font>
          <Font size="18.0" />
       </font></Button>
-    <Button fx:id="btnGerenciamento" layoutX="44.0" layoutY="250.0" mnemonicParsing="false" onAction="#Gerenciamento" prefHeight="39.0" prefWidth="207.0" text="Gerenciamento">
+    <Button fx:id="btnGerenciamento" disable="true" layoutX="451.0" layoutY="196.0" mnemonicParsing="false" onAction="#Gerenciamento" prefHeight="39.0" prefWidth="59.0" text="Gerenciamento" visible="false">
       <font>
          <Font size="18.0" />
       </font></Button>
-    <Button fx:id="btnCadastro" layoutX="44.0" layoutY="324.0" mnemonicParsing="false" onAction="#Cadastro" prefHeight="39.0" prefWidth="207.0" text="Cadastro">
+   <Button fx:id="btnLogout" layoutX="225.0" layoutY="229.0" mnemonicParsing="false" onAction="#Logout" text="Logout">
       <font>
          <Font size="18.0" />
-      </font></Button>
-   <Button fx:id="btnLogout" layoutX="110.0" layoutY="397.0" mnemonicParsing="false" onAction="#Logout" text="Logout">
+      </font>
+   </Button>
+   <Button fx:id="btnTanque" layoutX="279.0" layoutY="98.0" mnemonicParsing="false" onAction="#CadastroTanque" prefHeight="39.0" prefWidth="207.0" text="Tanques">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Button fx:id="btnPeixe" layoutX="44.0" layoutY="157.0" mnemonicParsing="false" onAction="#CadastroPeixe" prefHeight="39.0" prefWidth="207.0" text="Peixes">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+   <Button fx:id="btnUsuario" layoutX="280.0" layoutY="157.0" mnemonicParsing="false" onAction="#Usuario" prefHeight="39.0" prefWidth="207.0" text="Usuários">
       <font>
          <Font size="18.0" />
       </font>

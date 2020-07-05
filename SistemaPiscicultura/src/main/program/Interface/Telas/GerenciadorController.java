@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.awt.*;
+
 public class GerenciadorController {
     @FXML
     private Button btnVoltar;
@@ -25,7 +27,7 @@ public class GerenciadorController {
         stage = (Stage) btnVoltar.getScene().getWindow();
         stage.close();
         Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        Scene scene = new Scene(root, 300, 475);
+        Scene scene = new Scene(root, 530, 300);
         stage.setScene(scene);
         stage.show();
     }
