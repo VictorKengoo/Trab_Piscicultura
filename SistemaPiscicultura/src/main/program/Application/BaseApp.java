@@ -18,8 +18,6 @@ public class BaseApp<T extends Entidade> {
         if (entity == null) {
             throw new Exception("Entidade nula");
         }
-
-        entity.validar();
         _baseRepository.add(entity);
         return entity;
     }
@@ -28,15 +26,18 @@ public class BaseApp<T extends Entidade> {
         return _baseRepository.getById(id);
     }
 
-    public void delete(Class<T> entity,int id) throws Exception {
-        _baseRepository.delete(entity,id);
+    public void delete(T entity) throws Exception {
+        _baseRepository.delete(entity);
     }
 
-    public void update(T entity) {
+    public void update(T entity) throws Exception {
+        entity.validar();
         _baseRepository.update(entity);
     }
 
     public List<T> getAll(Class<T> entity) {
         return _baseRepository.list(entity);
     }
+
+    public List<T> getMonitoramentData(Class<T> entity, Integer id) { return _baseRepository.listData(entity, id); }
 }

@@ -1,50 +1,42 @@
 package Interface;
-
-import Application.EstoqueApp;
-import Application.PeixeApp;
-import Application.TanqueApp;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import Models.Estoque;
-import Models.Peixe;
-import Models.Tanque;
-
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
 
 public class Utils {
 
-    public ObservableList<Estoque> getEstoque() {
-        ObservableList<Estoque> estoqueList = FXCollections.observableArrayList();
-
-        EstoqueApp estoqueApp = new EstoqueApp();
-        var lista = estoqueApp.getAll(Estoque.class);
-
-        for (Estoque est : lista) {
-            estoqueList.add(new Estoque(est.getMarca(), est.getQuantidade()));
+    public static Boolean isInteger(String strNum) {
+        if (strNum == null) {
+            return false;
         }
-
-        return estoqueList;
+        try {
+            double d = Integer.parseInt(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 
-    public ObservableList<Tanque> getTanque() {
-        ObservableList<Tanque> tanqueList = FXCollections.observableArrayList();
-
-        PeixeApp peixeApp = new PeixeApp();
-
-        TanqueApp tanqueApp = new TanqueApp();
-        var lista = tanqueApp.getAll(Tanque.class);
-        Peixe peixe = new Peixe();
-
-        for(Tanque tanque : lista) {
-            for(Peixe p : peixeApp.getAll(Peixe.class)) {
-                if (p.id == tanque.getPeixe().id);
-                    peixe = p;
-            }
-            tanqueList.add(new Tanque(peixe.getEspecie(), tanque.getStatus(), tanque.getVolume()));
+    public static Boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
         }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
 
-        return tanqueList;
+    public static Integer getDays(String dateString) throws ParseException {
+        return Integer.parseInt(dateString.split("-")[2].split(" ")[0]);
+    }
+
+    public static Integer getMonth(String dateString) {
+        return Integer.parseInt(dateString.split("-")[1]);
+    }
+
+    public static Integer getYear(String dateString) {
+        return Integer.parseInt(dateString.split("-")[0]);
     }
 
 }

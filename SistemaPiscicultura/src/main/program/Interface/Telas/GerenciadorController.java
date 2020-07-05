@@ -27,7 +27,7 @@ public class GerenciadorController {
         stage = (Stage) btnVoltar.getScene().getWindow();
         stage.close();
         Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        Scene scene = new Scene(root, 300, 475);
+        Scene scene = new Scene(root, 530, 300);
         stage.setScene(scene);
         stage.show();
     }

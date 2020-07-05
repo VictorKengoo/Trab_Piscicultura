@@ -11,7 +11,7 @@ import java.util.List;
 
 public class MonitoramentoRepository extends BaseRepository<Monitoramento> {
 
-    public List<Monitoramento> listTOP(){
+    /*public List<Monitoramento> listTOP(){
         Session session = sessionFactory.openSession();
 
         try{
@@ -46,5 +46,5 @@ public class MonitoramentoRepository extends BaseRepository<Monitoramento> {
         } finally{
             if(session != null && session.isOpen()){ session.close(); }
         }
-    }
+    }*/
 }

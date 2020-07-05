@@ -1,8 +1,11 @@
 package Models;
 
+import Application.EstoqueApp;
+import Application.TanqueApp;
 import Interface.EstouraException;
 
 import javax.persistence.Entity;
+import java.util.ArrayList;
 
 @Entity
 public class Estoque extends Entidade{
@@ -20,18 +23,16 @@ public class Estoque extends Entidade{
 
     public Estoque () { };
 
-    public Estoque (String marca, Integer quantidade) {
+    public Estoque (String marca, Integer quantidade) throws Exception {
         this.Marca = marca;
         this.Quantidade = quantidade;
+        validar();
     }
 
     //Validações
     @Override
     public void validar() throws Exception {
-        EstouraException EE = new EstouraException();
-
-        if(Marca.isBlank()){ EE.RaiseException("Marca em branco !"); }
-        if(Quantidade < 0){ EE.RaiseException("Quantidade do estoque inválida."); }
-
+        if(Quantidade <= 0) { throw new Exception("Quantidade deve ser maior que 0.\n"); }
     }
+
 }

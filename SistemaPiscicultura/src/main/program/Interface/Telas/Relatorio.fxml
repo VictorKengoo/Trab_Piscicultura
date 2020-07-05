@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.RelatorioController">
+   <children>
+      <Button fx:id="btnGraficoTanque" layoutX="68.0" layoutY="58.0" mnemonicParsing="false" onAction="#GraficoTanque" prefHeight="39.0" prefWidth="118.0" text="Graficos">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnTabelaTanque" layoutX="68.0" layoutY="131.0" mnemonicParsing="false" onAction="#TabelaMonitoramento" prefHeight="39.0" prefWidth="118.0" text="Tabela">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnVoltar" layoutX="90.0" layoutY="224.0" mnemonicParsing="false" onAction="#Voltar" text="Voltar">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

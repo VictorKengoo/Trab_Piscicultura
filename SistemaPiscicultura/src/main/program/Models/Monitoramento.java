@@ -9,7 +9,7 @@ public class Monitoramento extends Entidade{
     private int tanqueId;
     private double  temperatura;
     private double ph;
-    private Date logData;
+    private String logData;
 
     public int getTanqueId() {
         return tanqueId;
@@ -35,11 +35,11 @@ public class Monitoramento extends Entidade{
         this.ph = ph;
     }
 
-    public Date getLogData() {
+    public String getLogData() {
         return logData;
     }
 
-    public void setLogData(Date logData) {
+    public void setLogData(String logData) {
         this.logData = logData;
     }
 
