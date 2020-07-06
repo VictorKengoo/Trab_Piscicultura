@@ -1,75 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e58a8dc6-f1ae-4170-91e8-5ba645c639c5" name="Default Changelist" comment="Limpeza/Melhoramentos no estrutura dos CRUDs em geral.&#10;GetByName/GetByID Funcionando para busca individual.&#10;Singleton pra verificação de permissões.&#10;Combobox cadastro usuario agora atrelado ao ENUM de TipoUsuario">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+    <list default="true" id="e58a8dc6-f1ae-4170-91e8-5ba645c639c5" name="Default Changelist" comment="Limpeza/Melhoramentos no estrutura dos CRUDs em geral.&#10;Login revisado&#10;Todos os CRUDS agora revisados&#10;Singleton usado pra verificação de permissões aplicado ao MenuController para o botão de cadastro de Usuarios.">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_11_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_11_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mydb.db" beforeDir="false" afterPath="$PROJECT_DIR$/mydb.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/BaseApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/BaseApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/program/Application/EstoqueApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/EstoqueApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/LoginApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/MonitoramentoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/MonitoramentoApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/PeixeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/PeixeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/TanqueApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/TanqueApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/UsuarioApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/UsuarioApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Consol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Consol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/MyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroPeixe.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroPeixe.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Cadastro.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroPeixeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroPeixeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroTanque.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroTanque.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroTanqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroTanqueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Gerenciador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/Gerenciador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/GerenciadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/GerenciadorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/HistoryData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/HistoryData.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/HistoryDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/HistoryDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Estoque.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/Estoque.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/EstoqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/EstoqueController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/Menu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Relatorio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/Relatorio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/RelatorioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/RelatorioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Usuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/Usuario.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Models/Enums/TipoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Models/Enums/TipoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Models/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Models/Estoque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Models/Monitoramento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Models/Monitoramento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Models/Peixe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Models/Peixe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Models/Tanque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Models/Tanque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Models/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Repository/Base/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/Base/BaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Repository/MonitoramentoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/MonitoramentoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Repository/EstoqueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/EstoqueRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/program/Repository/PeixeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/PeixeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Repository/TanqueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/TanqueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/BaseApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/BaseApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/LoginApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/LoginApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/PeixeApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/PeixeApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/TanqueApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/TanqueApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Application/UsuarioApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/UsuarioApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/Cadastro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/Cadastro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroPeixe.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroPeixe.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroPeixeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroPeixeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroTanque.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroTanque.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroTanqueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroTanqueController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/Gerenciador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/Gerenciador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/HistoryData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/HistoryData.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/Menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/Relatorio.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/Relatorio.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/Usuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/Usuario.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Enums/TipoUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Enums/TipoUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Repository/Base/BaseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Repository/Base/BaseRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Repository/PeixeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Repository/PeixeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Repository/TanqueRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Repository/TanqueRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Repository/UsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Repository/UsuarioRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +182,29 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -299,10 +267,10 @@
     </state>
     <state width="447" height="466" key="DebuggerActiveHint/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593990625384" />
     <state width="425" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1586542208032" />
-    <state x="225" y="86" key="DiffContextDialog" timestamp="1593996253359">
+    <state x="225" y="86" width="1536" height="860" key="DiffContextDialog" timestamp="1594060572954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="225" y="86" key="DiffContextDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593996253359" />
+    <state x="225" y="86" width="1536" height="860" key="DiffContextDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060572954" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1594037223334">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -368,6 +336,18 @@
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594037234481" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586543654244" />
     <state x="440" y="105" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1593218355984" />
+    <state x="613" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1594060113581">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="613" y="254" key="VcsDiffUtil.ChangesDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060113581" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1594060253538">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060253538" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1594060572954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060572954" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593968133066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

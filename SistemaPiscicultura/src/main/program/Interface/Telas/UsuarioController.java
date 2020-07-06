@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import jdk.jshell.spi.ExecutionControl;
 
 public class UsuarioController {
     ObservableList<UsuarioTableData> obsListUserData = FXCollections.observableArrayList();
@@ -45,9 +46,16 @@ public class UsuarioController {
     @FXML
     private TableColumn<UsuarioTableData, String> columnTipo;
 
+    EstouraException ex = new EstouraException();
+    UsuarioApp usuarioApp = new UsuarioApp();
+
     public void initialize() {
         populaTabela();
         populaCombos();
+    }
+
+    private void bloqueiaCampos() throws ExecutionControl.NotImplementedException {
+        throw new ExecutionControl.NotImplementedException("Falta implementar Usuario - bloqueiaCampos");
     }
 
     private void populaTabela() {
@@ -61,18 +69,21 @@ public class UsuarioController {
         tblUsuario.setItems(obsListUserData);
     }
 
-    private void populaCombos(){
+    private void populaCombos() {
         cmbUserType.getItems().addAll(TipoUsuario.values());
     }
-    private void atualizaPagina(){
+
+    private void atualizaPagina() {
         atualizaTabela();
         limpaCampos();
     }
+
     private void atualizaTabela() {
         obsListUserData.removeAll(obsListUserData);
         populaTabela();
     }
-    private  void limpaCampos(){
+
+    private void limpaCampos() {
         txtUsuario.clear();
         txtSenha.clear();
         cmbUserType.setValue(null);
@@ -90,39 +101,39 @@ public class UsuarioController {
     }
 
     public void Cadastrar(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-        UsuarioApp usuarioApp = new UsuarioApp();
         try {
+
             validarCampos();
-            Usuario newUser = new Usuario(txtUsuario.getText(), txtSenha.getText(),cmbUserType.getValue().toString());
+
+            Usuario newUser = new Usuario(txtUsuario.getText(), txtSenha.getText(), cmbUserType.getValue().toString());
             usuarioApp.hasDuplicate(newUser);
+
             usuarioApp.Adicionar(newUser);
             ex.RaiseOK("Usuário cadastrado com sucesso!");
 
             atualizaPagina();
+
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
     }
 
     public void Excluir(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-        UsuarioApp usuarioApp = new UsuarioApp();
+
         Usuario selectedUser;
-
         try {
-            UsuarioTableData selectedFromTable = tblUsuario.getSelectionModel().getSelectedItem();
 
-            if (selectedFromTable != null) {
-                int selectedId = Integer.parseInt(selectedFromTable.getUsuarioId());
-                selectedUser = usuarioApp.getById(selectedId);
-            } else {
+            UsuarioTableData selectedFromTable = tblUsuario.getSelectionModel().getSelectedItem();
+            if (selectedFromTable == null)
                 throw new Exception("Selecione um registro na tabela.");
-            }
+
+            int selectedId = Integer.parseInt(selectedFromTable.getUsuarioId());
+            selectedUser = usuarioApp.getById(selectedId);
 
             if (ex.RaiseConfirmation("Tem certeza que deseja excluir o registro?")) {
                 usuarioApp.delete(selectedUser);
                 ex.RaiseOK("Usuário deletado com sucesso!");
+
                 atualizaPagina();
             }
         } catch (Exception e) {
@@ -131,24 +142,21 @@ public class UsuarioController {
     }
 
     public void Editar(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
         try {
             UsuarioTableData selectedFromTable = tblUsuario.getSelectionModel().getSelectedItem();
             if (selectedFromTable == null)
                 ex.RaiseException("Não foi selecionado nenhum item na tabela.");
-            else {
-                txtUsuario.setText(selectedFromTable.getUsername());
-                cmbUserType.setValue(TipoUsuario.valueOf(selectedFromTable.getTipo()));
-                txtIdUsuario.setText(selectedFromTable.getUsuarioId());
-            }
+
+            txtUsuario.setText(selectedFromTable.getUsername());
+            cmbUserType.setValue(TipoUsuario.valueOf(selectedFromTable.getTipo()));
+            txtIdUsuario.setText(selectedFromTable.getUsuarioId());
+
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
     }
 
     public void Atualizar(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-        UsuarioApp usuarioApp = new UsuarioApp();
         try {
             if (txtIdUsuario.getText().isBlank())
                 throw new Exception("Nada selecionado. Selecione um item na tabela e aperte Editar.");
@@ -170,7 +178,7 @@ public class UsuarioController {
         }
     }
 
-    public void validarCampos() throws Exception {
+    private void validarCampos() throws Exception {
         EstouraException ex = new EstouraException();
         String erros = "";
         Boolean hasInvalidField = false;

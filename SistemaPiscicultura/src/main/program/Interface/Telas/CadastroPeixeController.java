@@ -61,7 +61,7 @@ public class CadastroPeixeController {
 
     Stage stage = new Stage();
     Utils utils = new Utils();
-
+    EstouraException ex = new EstouraException();
     PeixeApp peixeApp = new PeixeApp();
 
     public void initialize() {
@@ -126,61 +126,53 @@ public class CadastroPeixeController {
     }
 
     public void Cadastrar(ActionEvent event) {
-        EstouraException ex = new EstouraException();
         try {
             validarCampos();
+
             Peixe peixe = new Peixe(txtEspecie.getText(), Double.parseDouble(txtTempMax.getText()), Double.parseDouble(txtTempMin.getText()), Double.parseDouble(txtPhMax.getText()), Double.parseDouble(txtPhMin.getText()));
             peixeApp.hasDuplicate(peixe);
+
             peixeApp.Adicionar(peixe);
             ex.RaiseOK("Tanque cadastrado com sucesso!");
+
             atualizaPagina();
+
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
     }
 
     public void Deletar(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
         try {
-
             PeixeTableData peixeFromTable = tblPeixe.getSelectionModel().getSelectedItem();
-
             if (peixeFromTable == null)
                 throw new Exception("Não foi selecionado nenhum registro na tabela.");
+
             Peixe peixe = peixeApp.getById(Integer.parseInt(peixeFromTable.getPeixeId()));
-            peixeApp.delete(peixe);
-            ex.RaiseOK("Item deletado com sucesso!");
-            stage = (Stage) btnDeletar.getScene().getWindow();
-            stage.close();
-            Parent root = FXMLLoader.load(getClass().getResource("CadastroPeixe.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            if (ex.RaiseConfirmation("Tem certeza que deseja excluir o registro?")) {
+                peixeApp.delete(peixe);
+                ex.RaiseOK("Item deletado com sucesso!");
+
+                atualizaPagina();
+            }
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
-
     }
 
-    //String currentEspecie = "";
-
     public void Editar(ActionEvent event) {
-        EstouraException ex = new EstouraException();
         try {
-
             PeixeTableData peixeFromTable = tblPeixe.getSelectionModel().getSelectedItem();
-
             if (peixeFromTable == null)
                 throw new Exception("Não foi selecionado nenhum registro na tabela.");
 
-
-            //currentEspecie = peixeFromTable.getEspecie();
             txtEspecie.setText(peixeFromTable.getEspecie());
             txtTempMax.setText(String.valueOf(peixeFromTable.getTempMax()));
             txtTempMin.setText(String.valueOf(peixeFromTable.getTempMin()));
             txtPhMax.setText(String.valueOf(peixeFromTable.getPHMax()));
             txtPhMin.setText(String.valueOf(peixeFromTable.getPHMin()));
             txtIdPeixe.setText(String.valueOf(peixeFromTable.getPeixeId()));
+
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
@@ -188,36 +180,31 @@ public class CadastroPeixeController {
 
 
     public void Atualizar(ActionEvent event) throws Exception {
+        try {
+            if (txtIdPeixe.getText().isBlank())
+                throw new Exception("Nada selecionado. Selecione um item na tabela e aperte Editar.");
+            validarCampos();
 
-            EstouraException ex = new EstouraException();
-            try {
-                if (txtIdPeixe.getText().isBlank())
-                    throw new Exception("Nada selecionado. Selecione um item na tabela e aperte Editar.");
+            Peixe oldEntity = peixeApp.getById(Integer.parseInt(txtIdPeixe.getText()));
 
-                Peixe oldEntity = peixeApp.getById(Integer.parseInt(txtIdPeixe.getText()));
-                validarCampos();
+            oldEntity.setEspecie(txtEspecie.getText());
+            oldEntity.setMaxTemp(Double.parseDouble(txtTempMax.getText()));
+            oldEntity.setMinTemp(Double.parseDouble(txtTempMin.getText()));
+            oldEntity.setMaxpH(Double.parseDouble(txtPhMax.getText()));
+            oldEntity.setMinpH(Double.parseDouble(txtPhMin.getText()));
+            peixeApp.hasDuplicate(oldEntity);
 
-                oldEntity.setEspecie(txtEspecie.getText());
-                oldEntity.setMaxTemp(Double.parseDouble(txtTempMax.getText()));
-                oldEntity.setMinTemp(Double.parseDouble(txtTempMin.getText()));
-                oldEntity.setMaxpH(Double.parseDouble(txtPhMax.getText()));
-                oldEntity.setMinpH(Double.parseDouble(txtPhMin.getText()));
-                peixeApp.hasDuplicate(oldEntity);
+            peixeApp.update(oldEntity);
+            ex.RaiseOK("Peixe atualizado com sucesso!");
 
-                peixeApp.update(oldEntity);
-                ex.RaiseOK("Peixe atualizado com sucesso!");
-
-                atualizaPagina();
-
+            atualizaPagina();
 
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
-
     }
 
     public void validarCampos() throws Exception {
-        EstouraException ex = new EstouraException();
         Boolean hasInvalidField = false;
         String erros = "";
         if (txtEspecie.getText().isBlank()) {
@@ -228,7 +215,7 @@ public class CadastroPeixeController {
         if (txtTempMax.getText().isBlank()) {
             erros += "Campo temperatura máxima não pode estar em branco.\n";
             hasInvalidField = true;
-        } else if (!utils.isNumeric(txtTempMax.getText())) {
+        } else if (!Utils.isNumeric(txtTempMax.getText())) {
             erros += "Campo temperatura máxima deve ser numérico.\n";
             hasInvalidField = true;
         }
@@ -236,7 +223,7 @@ public class CadastroPeixeController {
         if (txtTempMin.getText().isBlank()) {
             erros += "Campo temperatura mínima não pode estar em branco.\n";
             hasInvalidField = true;
-        } else if (!utils.isNumeric(txtTempMin.getText())) {
+        } else if (!Utils.isNumeric(txtTempMin.getText())) {
             erros += "Campo temperatura mínima deve ser numérico.\n";
             hasInvalidField = true;
         }
@@ -244,7 +231,7 @@ public class CadastroPeixeController {
         if (txtPhMax.getText().isBlank()) {
             erros += "Campo pH máximo não pode estar em branco.\n";
             hasInvalidField = true;
-        } else if (!utils.isNumeric(txtPhMax.getText())) {
+        } else if (!Utils.isNumeric(txtPhMax.getText())) {
             erros += "Campo pH máximo deve ser numérico.\n";
             hasInvalidField = true;
         }
@@ -252,7 +239,7 @@ public class CadastroPeixeController {
         if (txtPhMin.getText().isBlank()) {
             erros += "Campo pH mínimo não pode estar em branco.\n";
             hasInvalidField = true;
-        } else if (!utils.isNumeric(txtPhMin.getText())) {
+        } else if (!Utils.isNumeric(txtPhMin.getText())) {
             erros += "Campo pH mínimo deve ser numérico.\n";
             hasInvalidField = true;
         }

@@ -1,6 +1,11 @@
 package Interface.Telas;
 
+import Application.Session;
 import Application.TanqueApp;
+import Interface.Utils;
+import Models.Enums.TipoUsuario;
+import Models.Estoque;
+import Models.Tanque;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +17,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import Models.Estoque;
-import Interface.Utils;
-import Models.Tanque;
 
 import java.io.IOException;
 
@@ -45,10 +47,8 @@ public class MenuController {
     Utils utils = new Utils();
 
     public void initialize() {
-        if (LoginController.currentUser.equals("USUARIO")) {
+        if (!Session.getInstance().getUsuarioLogado().getTipoUser().equals(TipoUsuario.ADMINISTRADOR.toString())) {
             btnUsuario.setDisable(true);
-        } else {
-            btnUsuario.setDisable(false);
         }
     }
 

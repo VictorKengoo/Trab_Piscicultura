@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class PeixeRepository extends BaseRepository<Peixe> {
+
     public Peixe getByName(Peixe newPeixe) {
         Session session = sessionFactory.openSession();
         EstouraException EE = new EstouraException();
@@ -30,4 +31,5 @@ public class PeixeRepository extends BaseRepository<Peixe> {
             if(session != null && session.isOpen()){ session.close(); }
         }
     }
+
 }

@@ -3,7 +3,7 @@ package Interface.Telas;
 import Application.EstoqueApp;
 import Interface.EstouraException;
 import Interface.Utils;
-import Models.*;
+import Models.Estoque;
 import ViewModels.EstoqueTableData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,8 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
-import java.util.List;
+import jdk.jshell.spi.ExecutionControl;
 
 public class EstoqueController {
     @FXML
@@ -47,23 +46,45 @@ public class EstoqueController {
     @FXML
     private TableColumn<EstoqueTableData, String> columnQuantidade;
 
-    ObservableList<EstoqueTableData> obsListEstoqueData = FXCollections.observableArrayList();
+    ObservableList<EstoqueTableData> obsListTableData = FXCollections.observableArrayList();
 
+    EstoqueApp estoqueApp = new EstoqueApp();
     Stage stage = new Stage();
     Utils utils = new Utils();
+    EstouraException ex = new EstouraException();
 
     public void initialize() {
-        EstoqueApp estoqueApp = new EstoqueApp();
+        populaTabela();
+    }
 
+    private void populaTabela() {
         for (Estoque estoque : estoqueApp.getAll(Estoque.class)) {
-            obsListEstoqueData.add(new EstoqueTableData(estoque));
+            obsListTableData.add(new EstoqueTableData(estoque));
         }
-
         columnIdEstoque.setCellValueFactory(new PropertyValueFactory<EstoqueTableData, String>("estoqueId"));
         columnProduto.setCellValueFactory(new PropertyValueFactory<EstoqueTableData, String>("produto"));
         columnQuantidade.setCellValueFactory(new PropertyValueFactory<EstoqueTableData, String>("quantidade"));
+        tblEstoque.setItems(obsListTableData);
+    }
 
-        tblEstoque.setItems(obsListEstoqueData);
+    private void atualizaPagina() {
+        atualizaTabela();
+        limpaCampos();
+    }
+
+    private void atualizaTabela() {
+        obsListTableData.removeAll(obsListTableData);
+        populaTabela();
+    }
+
+    private void limpaCampos() {
+        txtIdEstoque.clear();
+        txtProduto.clear();
+        txtQuantidade.clear();
+    }
+
+    private void bloqueiaCampos() throws ExecutionControl.NotImplementedException {
+        throw new ExecutionControl.NotImplementedException("Falta implementar Estoque - bloqueiaCampos");
     }
 
     public void Voltar(ActionEvent event) throws Exception {
@@ -76,173 +97,97 @@ public class EstoqueController {
         stage.show();
     }
 
-    public void CadastrarEstoque(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-        EstoqueApp estoqueApp = new EstoqueApp();
-        Estoque estoque;
-        Boolean hasDuplicate;
-        Boolean hasInvalidField;
+    public void Cadastrar(ActionEvent event) throws Exception {
+        try {
+            validarCampos();
 
-        hasInvalidField = ValidarCamposEstoque();
+            Estoque estoque = new Estoque(txtProduto.getText(), Integer.parseInt(txtQuantidade.getText()));
+            estoqueApp.hasDuplicate(estoque);
 
-        if (!hasInvalidField) {
-            estoque = new Estoque(txtProduto.getText(), Integer.parseInt(txtQuantidade.getText()));
-            hasDuplicate = estoqueApp.hasDuplicate(txtProduto.getText());
-            if (!hasDuplicate) {
-                try {
-                    estoqueApp.Adicionar(estoque);
-                    ex.RaiseOK("Estoque cadastrado com sucesso!");
-                    stage = (Stage) btnAdicionar.getScene().getWindow();
-                    stage.close();
-                    Parent root = FXMLLoader.load(getClass().getResource("Estoque.fxml"));
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (Exception e) {
-                    ex.RaiseException(e.getMessage());
-                }
-            }
+            estoqueApp.Adicionar(estoque);
+            ex.RaiseOK("Estoque cadastrado com sucesso!");
+
+            atualizaPagina();
+
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
     }
 
-    public void DeletarEstoque(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-        Boolean hasError = false;
-        Boolean confirmed = false;
-        EstoqueApp estoqueApp = new EstoqueApp();
-        Estoque estoque = new Estoque();
-        EstoqueTableData estoqueFromTable;
-        if (tblEstoque.getSelectionModel().getSelectedItem() != null) {
-            estoqueFromTable = tblEstoque.getSelectionModel().getSelectedItem();
-            List<Estoque> listEstoque = estoqueApp.getAll(Estoque.class);
-            for (Estoque e : listEstoque) {
-                if (e.id == Integer.parseInt(estoqueFromTable.getEstoqueId())) {
-                    estoque = e;
-                }
-            }
-            confirmed = ex.RaiseConfirmation("Tem certeza que deseja excluir registro?");
-        } else {
-            ex.RaiseException("Não foi selecionado nenhum registro na tabela.");
-            hasError = true;
-        }
+    public void Deletar(ActionEvent event) throws Exception {
+        try {
+            EstoqueTableData estoqueFromTable = tblEstoque.getSelectionModel().getSelectedItem();
+            if (estoqueFromTable == null)
+                ex.RaiseException("Não foi selecionado nenhum registro na tabela.");
 
-        if (!hasError && confirmed) {
-            try {
+            Estoque estoque = estoqueApp.getById(Integer.parseInt(estoqueFromTable.getEstoqueId()));
+            if (ex.RaiseConfirmation("Tem certeza que deseja excluir registro?")) {
                 estoqueApp.delete(estoque);
                 ex.RaiseOK("Estoque deletado com sucesso!");
-                stage = (Stage) btnDeletar.getScene().getWindow();
-                stage.close();
-                Parent root = FXMLLoader.load(getClass().getResource("Estoque.fxml"));
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
+
+                atualizaPagina();
             }
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
+        }
+
+    }
+
+
+    public void Editar(ActionEvent event) throws Exception {
+        try {
+            EstoqueTableData estoqueFromTable = tblEstoque.getSelectionModel().getSelectedItem();
+            if (estoqueFromTable == null)
+                throw new Exception("Não foi selecionado nenhum registro na tabela.");
+
+            txtProduto.setText(estoqueFromTable.getProduto());
+            txtQuantidade.setText(String.valueOf(estoqueFromTable.getQuantidade()));
+            txtIdEstoque.setText(String.valueOf(estoqueFromTable.getEstoqueId()));
+
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
     }
 
-    String currentProduto = "";
 
-    public void EditarEstoque(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-        Boolean hasError = false;
-        EstoqueApp estoqueApp = new EstoqueApp();
-        Estoque estoque = new Estoque();
-        EstoqueTableData estoqueFromTable;
-        if (tblEstoque.getSelectionModel().getSelectedItem() != null) {
-            estoqueFromTable = tblEstoque.getSelectionModel().getSelectedItem();
-            List<Estoque> listEstoque = estoqueApp.getAll(Estoque.class);
-            for (Estoque e : listEstoque) {
-                if (e.id == Integer.parseInt(estoqueFromTable.getEstoqueId())) {
-                    estoque = e;
-                }
-            }
-        } else {
-            ex.RaiseException("Não foi selecionado nenhum registro na tabela.");
-            hasError = true;
-        }
+    public void Atualizar(ActionEvent event) throws Exception {
+        try {
+            if (txtIdEstoque.getText().isBlank())
+                throw new Exception("Nenhum item selecionado para edição.");
 
-        if (!hasError) {
-            try {
-                currentProduto = estoque.getMarca();
-                txtProduto.setText(estoque.getMarca());
-                txtQuantidade.setText(String.valueOf(estoque.getQuantidade()));
-                txtIdEstoque.setText(String.valueOf(estoque.id));
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
-            }
+            validarCampos();
+
+            Estoque estoque = estoqueApp.getById(Integer.parseInt(txtIdEstoque.getText()));
+            estoque.setMarca(txtProduto.getText());
+            estoque.setQntEstoque(Integer.parseInt(txtQuantidade.getText()));
+            estoqueApp.hasDuplicate(estoque);
+
+            estoqueApp.update(estoque);
+            ex.RaiseOK("Estoque atualizado com sucesso!");
+
+            atualizaPagina();
+
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
     }
 
-    public void AtualizarEstoque(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-        Boolean hasError = false;
-        Boolean hasDuplicate = false;
-        Boolean hasInvalidField = false;
-        EstoqueApp estoqueApp = new EstoqueApp();
-        Estoque estoque = new Estoque();
-        if (txtIdEstoque.getText().isBlank() || txtIdEstoque.getText().isEmpty()) {
-            ex.RaiseException("Nenhum item selecionado para edição.");
-            hasError = true;
-        } else {
-            hasInvalidField = ValidarCamposEstoque();
-            int cod = Integer.parseInt(txtIdEstoque.getText());
-            List<Estoque> listEstoque = estoqueApp.getAll(Estoque.class);
-            for (Estoque e : listEstoque) {
-                if (e.id == cod) {
-                    estoque = e;
-                }
-            }
-            if (!hasInvalidField) {
-                estoque.setMarca(txtProduto.getText());
-                estoque.setQntEstoque(Integer.parseInt(txtQuantidade.getText()));
-                if (!txtProduto.getText().equals(currentProduto)) {
-                    hasDuplicate = estoqueApp.hasDuplicate(txtProduto.getText());
-                }
-            }
-        }
-
-        if (!hasError && !hasDuplicate && !hasInvalidField) {
-            try {
-                estoqueApp.update(estoque);
-                ex.RaiseOK("Estoque atualizado com sucesso!");
-                stage = (Stage) btnAtualizar.getScene().getWindow();
-                stage.close();
-                Parent root = FXMLLoader.load(getClass().getResource("Estoque.fxml"));
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
-            }
-        }
-    }
-
-    public Boolean ValidarCamposEstoque() {
-        EstouraException ex = new EstouraException();
+    public void validarCampos() throws Exception {
         Boolean hasInvalidField = false;
         String erros = "";
         if (txtProduto.getText().isBlank()) {
             erros += "Campo produto não pode estar em branco.\n";
             hasInvalidField = true;
         }
-
         if (txtQuantidade.getText().isBlank()) {
             erros += "Campo quantidade não pode estar em branco.\n";
             hasInvalidField = true;
-        } else if (!utils.isNumeric(txtQuantidade.getText())) {
+        } else if (!Utils.isNumeric(txtQuantidade.getText())) {
             erros += "Campo quantidade deve ser numérico.\n";
             hasInvalidField = true;
         }
-
-        if(hasInvalidField) {
-            ex.RaiseException(erros);
+        if (hasInvalidField) {
+            throw new Exception(erros);
         }
-
-        return hasInvalidField;
     }
-
-
-
 }

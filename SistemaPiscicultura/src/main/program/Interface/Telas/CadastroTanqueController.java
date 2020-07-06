@@ -62,6 +62,7 @@ public class CadastroTanqueController {
     Utils utils = new Utils();
     TanqueApp tanqueApp = new TanqueApp();
     PeixeApp peixeApp = new PeixeApp();
+    EstouraException ex = new EstouraException();
 
     public void initialize() {
         bloqueiaCampos();
@@ -130,35 +131,34 @@ public class CadastroTanqueController {
     }
 
     public void Cadastrar(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-
         try {
             validarCampos();
+
             Peixe peixe = peixeApp.getById(mapNameTanqueToIdTanque.get(cmbPeixes.getValue()));
             Tanque tanque = new Tanque(peixe, txtNomeTanque.getText(), "OK", "OK", "OK", Double.parseDouble(txtVolumeTanque.getText()));
             tanqueApp.hasDuplicate(tanque);
+
             tanqueApp.Adicionar(tanque);
             ex.RaiseOK("Tanque cadastrado com sucesso!");
+
             atualizaPagina();
+
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
     }
 
     public void Deletar(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-        Tanque tanque;
         try {
             TanqueTableData tanqueFromTable = tblTanque.getSelectionModel().getSelectedItem();
-
-            if (tanqueFromTable != null) {
-                tanque = tanqueApp.getById(Integer.parseInt(tanqueFromTable.getTanqueId()));
-            } else {
+            if (tanqueFromTable == null)
                 throw new Exception("Não foi selecionado nenhum registro na tabela.");
-            }
+
+            Tanque tanque = tanqueApp.getById(Integer.parseInt(tanqueFromTable.getTanqueId()));
             if (ex.RaiseConfirmation("Tem certeza que deseja excluir o registro?")) {
                 tanqueApp.delete(tanque);
                 ex.RaiseOK("Tanque deletado com sucesso!");
+
                 atualizaPagina();
             }
         } catch (Exception e) {
@@ -166,47 +166,44 @@ public class CadastroTanqueController {
         }
     }
 
-    String currentTanque = "";
-
     public void Editar(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
         try {
             TanqueTableData tanqueFromTable = tblTanque.getSelectionModel().getSelectedItem();
-            if (tanqueFromTable != null) {
-                currentTanque = tanqueFromTable.getNomeTanque();
-                txtNomeTanque.setText(tanqueFromTable.getNomeTanque());
-                txtVolumeTanque.setText(String.valueOf(tanqueFromTable.getVolumeTanque()));
-                cmbPeixes.setValue(tanqueFromTable.getPeixeTanque());
-                txtIdTanque.setText(String.valueOf(tanqueFromTable.getTanqueId()));
-            } else {
+            if (tanqueFromTable == null)
                 throw new Exception("Não foi selecionado nenhum registro na tabela.");
-            }
+
+            txtNomeTanque.setText(tanqueFromTable.getNomeTanque());
+            txtVolumeTanque.setText(String.valueOf(tanqueFromTable.getVolumeTanque()));
+            cmbPeixes.setValue(tanqueFromTable.getPeixeTanque());
+            txtIdTanque.setText(String.valueOf(tanqueFromTable.getTanqueId()));
+
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
     }
 
     public void AtualizarTanque(ActionEvent event) throws Exception {
-        EstouraException ex = new EstouraException();
-
         try {
             if (txtIdTanque.getText().isBlank())
                 throw new Exception("Nada selecionado. Selecione um item na tabela e aperte Editar.");
-            Tanque old = tanqueApp.getById(Integer.parseInt(txtIdTanque.getText()));
+
             validarCampos();
+
+            Tanque old = tanqueApp.getById(Integer.parseInt(txtIdTanque.getText()));
             old.setNomeTanque(txtNomeTanque.getText());
             old.setVolume(Double.parseDouble(txtVolumeTanque.getText()));
             old.setPeixe(peixeApp.getById(mapNameTanqueToIdTanque.get(cmbPeixes.getValue())));
             tanqueApp.hasDuplicate(old);
+
             tanqueApp.update(old);
             ex.RaiseOK("Atualizado com sucesso!");
+
             atualizaPagina();
-        }
-        catch (Exception e) {
+
+        } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
     }
-
 
     public void validarCampos() throws Exception {
         Boolean hasInvalidField = false;
@@ -219,7 +216,7 @@ public class CadastroTanqueController {
         if (txtVolumeTanque.getText().isBlank()) {
             erros += "Campo volume não pode estar em branco.\n";
             hasInvalidField = true;
-        } else if (!utils.isNumeric(txtVolumeTanque.getText())) {
+        } else if (!Utils.isNumeric(txtVolumeTanque.getText())) {
             erros += "Campo volume deve ser numérico.\n";
             hasInvalidField = true;
         }
