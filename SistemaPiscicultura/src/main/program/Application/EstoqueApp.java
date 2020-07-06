@@ -3,15 +3,13 @@ package Application;
 import Interface.EstouraException;
 import Models.Estoque;
 import Repository.EstoqueRepository;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 
 
 public class EstoqueApp extends BaseApp<Estoque> {
 
-    private final EstoqueRepository _estoqueRepository;
+    private EstoqueRepository _estoqueRepository;
 
     public EstoqueApp() {
         _estoqueRepository = new EstoqueRepository();

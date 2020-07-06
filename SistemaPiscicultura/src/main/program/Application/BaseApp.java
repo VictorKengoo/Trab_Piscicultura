@@ -22,8 +22,8 @@ public class BaseApp<T extends Entidade> {
         return entity;
     }
 
-    public T getById(int id) throws Exception {
-        return _baseRepository.getById(id);
+    public T getById(String tabela, int id) throws Exception {
+        return _baseRepository.getById(tabela,id);
     }
 
     public void delete(T entity) throws Exception {

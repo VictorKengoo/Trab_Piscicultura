@@ -1,41 +1,28 @@
 package Application;
 
-import Interface.EstouraException;
+import Models.Enums.TipoUsuario;
 import Models.Peixe;
 import Repository.PeixeRepository;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.util.ArrayList;
 
 public class PeixeApp extends BaseApp<Peixe> {
 
-    private final PeixeRepository _peixeRepository;
+    private PeixeRepository _peixeRepository;
 
-<<<<<<< HEAD
     public PeixeApp() { _peixeRepository = new PeixeRepository();}
 
-    public boolean hasDuplicate(String especie) {
-        EstouraException EE = new EstouraException();
-        PeixeApp peixeApp = new PeixeApp();
-        ArrayList<String> listEspecieExistente = new ArrayList<String>();
-        for (Peixe peixe : peixeApp.getAll(Peixe.class)) {
-            listEspecieExistente.add(String.valueOf(peixe.getEspecie()));
-        }
-
-        for (String especieExistente : listEspecieExistente) {
-            if (especie.toLowerCase().trim().equals(especieExistente.toLowerCase().trim())) {
-                EE.RaiseException("Já existe um peixe registrado com esta espécie.");
-                return true;
+    public void hasDuplicate(Peixe novo) throws Exception {
+        Peixe existente = _peixeRepository.getByName(novo);
+        if (existente != null) {
+            if ((novo.id != existente.id) && (novo.getEspecie().toLowerCase().trim().equals(existente.getEspecie().toLowerCase().trim()))) {
+                throw new Exception("Já existe um registro com esta espécie.");
             }
         }
-        return false;
-=======
-    public PeixeApp() {
-        _peixeRepository = new PeixeRepository();
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
+    }
+
+    public boolean hasPermition(){
+        return Session.getInstance().getUsuarioLogado().getTipoUser().equals(TipoUsuario.ADMINISTRADOR.toString());
+    }
+    public Peixe getById(int id) throws Exception {
+        return super.getById("Peixe",id);
     }
 }

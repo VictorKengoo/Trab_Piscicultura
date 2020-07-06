@@ -2,6 +2,7 @@ package Interface.Telas;
 
 import Application.UsuarioApp;
 import Interface.EstouraException;
+import Models.Enums.TipoUsuario;
 import Models.Usuario;
 import ViewModels.UsuarioTableData;
 import javafx.collections.FXCollections;
@@ -15,13 +16,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.util.List;
-
 public class UsuarioController {
-    ObservableList<String> userTypes = FXCollections.observableArrayList("ADMINISTRADOR", "USUARIO");
     ObservableList<UsuarioTableData> obsListUserData = FXCollections.observableArrayList();
     Stage stage = new Stage();
-    String currentUsuario = "";
+
     @FXML
     private Button btnVoltar;
     @FXML
@@ -37,7 +35,7 @@ public class UsuarioController {
     @FXML
     private TextField txtSenha;
     @FXML
-    private ComboBox<String> cmbUserType;
+    private ComboBox<TipoUsuario> cmbUserType;
     @FXML
     private TableView<UsuarioTableData> tblUsuario;
     @FXML
@@ -48,20 +46,37 @@ public class UsuarioController {
     private TableColumn<UsuarioTableData, String> columnTipo;
 
     public void initialize() {
+        populaTabela();
+        populaCombos();
+    }
 
-        cmbUserType.setItems(userTypes);
-
+    private void populaTabela() {
         UsuarioApp usuarioApp = new UsuarioApp();
-
         for (Usuario user : usuarioApp.getAll(Usuario.class)) {
             obsListUserData.add(new UsuarioTableData(user));
         }
-
         columnIdUsuario.setCellValueFactory(new PropertyValueFactory<UsuarioTableData, String>("usuarioId"));
         columnUsuario.setCellValueFactory(new PropertyValueFactory<UsuarioTableData, String>("username"));
         columnTipo.setCellValueFactory(new PropertyValueFactory<UsuarioTableData, String>("tipo"));
-
         tblUsuario.setItems(obsListUserData);
+    }
+
+    private void populaCombos(){
+        cmbUserType.getItems().addAll(TipoUsuario.values());
+    }
+    private void atualizaPagina(){
+        atualizaTabela();
+        limpaCampos();
+    }
+    private void atualizaTabela() {
+        obsListUserData.removeAll(obsListUserData);
+        populaTabela();
+    }
+    private  void limpaCampos(){
+        txtUsuario.clear();
+        txtSenha.clear();
+        cmbUserType.setValue(null);
+        txtIdUsuario.clear();
     }
 
     public void Voltar(ActionEvent event) throws Exception {
@@ -74,130 +89,88 @@ public class UsuarioController {
         stage.show();
     }
 
-    public void CadastrarUsuario(ActionEvent event) throws Exception {
+    public void Cadastrar(ActionEvent event) throws Exception {
         EstouraException ex = new EstouraException();
         UsuarioApp usuarioApp = new UsuarioApp();
-        Usuario newUser;
         try {
-            ValidarCamposUsuario();
-            newUser = new Usuario(txtUsuario.getText(), txtSenha.getText(), cmbUserType.getValue());
+            validarCampos();
+            Usuario newUser = new Usuario(txtUsuario.getText(), txtSenha.getText(),cmbUserType.getValue().toString());
             usuarioApp.hasDuplicate(newUser);
             usuarioApp.Adicionar(newUser);
             ex.RaiseOK("Usuário cadastrado com sucesso!");
-            stage = (Stage) btnAdicionar.getScene().getWindow();
-            stage.close();
-            Parent root = FXMLLoader.load(getClass().getResource("Usuario.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+
+            atualizaPagina();
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
-
     }
 
-    public void DeletarUsuario(ActionEvent event) throws Exception {
+    public void Excluir(ActionEvent event) throws Exception {
         EstouraException ex = new EstouraException();
-        Boolean hasError = false;
-        Boolean confirmed = false;
         UsuarioApp usuarioApp = new UsuarioApp();
-        Usuario usuario = new Usuario();
-        UsuarioTableData userFromTable;
-        if (tblUsuario.getSelectionModel().getSelectedItem() != null) {
-            userFromTable = tblUsuario.getSelectionModel().getSelectedItem();
-            List<Usuario> listUsuario = usuarioApp.getAll(Usuario.class);
-            for (Usuario us : listUsuario) {
-                if (us.id == Integer.parseInt(userFromTable.getUsuarioId())) {
-                    usuario = us;
-                }
-            }
-            confirmed = ex.RaiseConfirmation("Tem certeza que deseja excluir o registro?");
-        } else {
-            ex.RaiseException("Não foi selecionado nenhum registro na tabela.");
-            hasError = true;
-        }
+        Usuario selectedUser;
 
-        if (!hasError && confirmed) {
-            try {
-                usuarioApp.delete(usuario);
+        try {
+            UsuarioTableData selectedFromTable = tblUsuario.getSelectionModel().getSelectedItem();
+
+            if (selectedFromTable != null) {
+                int selectedId = Integer.parseInt(selectedFromTable.getUsuarioId());
+                selectedUser = usuarioApp.getById(selectedId);
+            } else {
+                throw new Exception("Selecione um registro na tabela.");
+            }
+
+            if (ex.RaiseConfirmation("Tem certeza que deseja excluir o registro?")) {
+                usuarioApp.delete(selectedUser);
                 ex.RaiseOK("Usuário deletado com sucesso!");
-                stage = (Stage) btnDeletar.getScene().getWindow();
-                stage.close();
-                Parent root = FXMLLoader.load(getClass().getResource("Usuario.fxml"));
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
+                atualizaPagina();
             }
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
     }
 
-    public void EditarUsuario(ActionEvent event) throws Exception {
+    public void Editar(ActionEvent event) throws Exception {
         EstouraException ex = new EstouraException();
-        Boolean hasError = false;
-        UsuarioApp usuarioApp = new UsuarioApp();
-        Usuario usuario = new Usuario();
-        UsuarioTableData userFromTable;
-        if (tblUsuario.getSelectionModel().getSelectedItem() != null) {
-            userFromTable = tblUsuario.getSelectionModel().getSelectedItem();
-            List<Usuario> listUsuario = usuarioApp.getAll(Usuario.class);
-            for (Usuario e : listUsuario) {
-                if (e.id == Integer.parseInt(userFromTable.getUsuarioId())) {
-                    usuario = e;
-                }
+        try {
+            UsuarioTableData selectedFromTable = tblUsuario.getSelectionModel().getSelectedItem();
+            if (selectedFromTable == null)
+                ex.RaiseException("Não foi selecionado nenhum item na tabela.");
+            else {
+                txtUsuario.setText(selectedFromTable.getUsername());
+                cmbUserType.setValue(TipoUsuario.valueOf(selectedFromTable.getTipo()));
+                txtIdUsuario.setText(selectedFromTable.getUsuarioId());
             }
-        } else {
-            ex.RaiseException("Não foi selecionado nenhum item na tabela.");
-            hasError = true;
-        }
-
-        if (!hasError) {
-            try {
-                currentUsuario = usuario.getUsuario();
-                txtUsuario.setText(usuario.getUsuario());
-                txtSenha.setText(usuario.getSenha());
-                cmbUserType.setValue(usuario.getTipoUser());
-                txtIdUsuario.setText(String.valueOf(usuario.id));
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
-            }
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
     }
 
-    public void AtualizarUsuario(ActionEvent event) throws Exception {
+    public void Atualizar(ActionEvent event) throws Exception {
         EstouraException ex = new EstouraException();
         UsuarioApp usuarioApp = new UsuarioApp();
-        Usuario user;
-        UsuarioTableData userFromTable;
-
         try {
             if (txtIdUsuario.getText().isBlank())
                 throw new Exception("Nada selecionado. Selecione um item na tabela e aperte Editar.");
 
             Usuario oldUser = usuarioApp.getById(Integer.parseInt(txtIdUsuario.getText()));
-            ValidarCamposUsuario();
+            validarCampos();
 
             oldUser.setUsuario(txtUsuario.getText());
             oldUser.setSenha(txtSenha.getText());
-            oldUser.setTipoUser(cmbUserType.getValue());
+            oldUser.setTipoUser(cmbUserType.getValue().toString());
             usuarioApp.hasDuplicate(oldUser);
 
             usuarioApp.update(oldUser);
             ex.RaiseOK("Usuário atualizado com sucesso!");
-            stage = (Stage) btnAtualizar.getScene().getWindow();
-            stage.close();
-            Parent root = FXMLLoader.load(getClass().getResource("Usuario.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+
+            atualizaPagina();
         } catch (Exception e) {
             ex.RaiseException(e.getMessage());
         }
-
     }
 
-    public void ValidarCamposUsuario() throws Exception {
+    public void validarCampos() throws Exception {
         EstouraException ex = new EstouraException();
         String erros = "";
         Boolean hasInvalidField = false;

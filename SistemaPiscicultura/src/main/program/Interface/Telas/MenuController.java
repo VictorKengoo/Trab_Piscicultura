@@ -1,12 +1,6 @@
 package Interface.Telas;
 
-<<<<<<< HEAD
 import Application.TanqueApp;
-=======
-import Interface.Utils;
-import Models.Estoque;
-import Models.Tanque;
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +12,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import Models.Estoque;
+import Interface.Utils;
+import Models.Tanque;
 
 import java.io.IOException;
 

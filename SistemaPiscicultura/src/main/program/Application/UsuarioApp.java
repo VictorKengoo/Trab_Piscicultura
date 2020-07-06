@@ -12,15 +12,15 @@ public class UsuarioApp extends BaseApp<Usuario> {
     }
 
     public void hasDuplicate(Usuario newUser) throws Exception {
-        Usuario userExistente = _usuaruioRepository.getUserByUsername(newUser);
-        if (userExistente != null) {
-            if ((newUser.id != userExistente.id) && (newUser.getUsuario().toLowerCase().trim().equals(userExistente.getUsuario().toLowerCase().trim()))) {
+        Usuario existente = _usuaruioRepository.getUserByUsername(newUser);
+        if (existente != null) {
+            if ((newUser.id != existente.id) && (newUser.getUsuario().toLowerCase().trim().equals(existente.getUsuario().toLowerCase().trim()))) {
                 throw new Exception("Já existe um usuário registrado com este nome.");
             }
         }
     }
 
-//    public Usuario getById(int Id) throws Exception {
-//       return _usuaruioRepository.getById(Id);
-//    }
+    public Usuario getById(int id) throws Exception {
+        return super.getById("Usuario", id);
+    }
 }

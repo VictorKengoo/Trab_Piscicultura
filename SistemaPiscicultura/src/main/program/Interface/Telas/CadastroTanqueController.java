@@ -4,7 +4,8 @@ import Application.PeixeApp;
 import Application.TanqueApp;
 import Interface.EstouraException;
 import Interface.Utils;
-import Models.*;
+import Models.Peixe;
+import Models.Tanque;
 import ViewModels.TanqueTableData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,17 +14,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import javafx.scene.control.TableColumn;
-
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class CadastroTanqueController {
@@ -59,15 +54,60 @@ public class CadastroTanqueController {
 
     ObservableList<String> peixesList = FXCollections.observableArrayList();
 
-    ObservableList<TanqueTableData> obsListTanqueTableData = FXCollections.observableArrayList();
+    ObservableList<TanqueTableData> obsListTableData = FXCollections.observableArrayList();
 
     Map<String, Integer> mapNameTanqueToIdTanque = new HashMap<String, Integer>();
 
     Stage stage = new Stage();
     Utils utils = new Utils();
+    TanqueApp tanqueApp = new TanqueApp();
+    PeixeApp peixeApp = new PeixeApp();
 
     public void initialize() {
-        if (LoginController.currentUser.equals("USUARIO")) {
+        bloqueiaCampos();
+        populaTabela();
+        populaCombos();
+    }
+
+    private void populaTabela() {
+        for (Tanque tanque : tanqueApp.getAll(Tanque.class)) {
+            obsListTableData.add(new TanqueTableData(tanque));
+        }
+        columnIdTanque.setCellValueFactory(new PropertyValueFactory<TanqueTableData, String>("tanqueId"));
+        columnNomeTanque.setCellValueFactory(new PropertyValueFactory<TanqueTableData, String>("nomeTanque"));
+        columnVolumeTanque.setCellValueFactory(new PropertyValueFactory<TanqueTableData, String>("volumeTanque"));
+        columnPeixeTanque.setCellValueFactory(new PropertyValueFactory<TanqueTableData, String>("peixeTanque"));
+        tblTanque.setItems(obsListTableData);
+    }
+
+    private void populaCombos() {
+        //comboPeixes
+        for (Peixe peixe : peixeApp.getAll(Peixe.class)) {
+            peixesList.add(peixe.getEspecie());
+            mapNameTanqueToIdTanque.put(peixe.getEspecie(), peixe.id);
+        }
+        cmbPeixes.setItems(peixesList);
+    }
+
+    private void atualizaPagina() {
+        atualizaTabela();
+        limpaCampos();
+    }
+
+    private void atualizaTabela() {
+        obsListTableData.removeAll(obsListTableData);
+        populaTabela();
+    }
+
+    private void limpaCampos() {
+        txtNomeTanque.clear();
+        txtVolumeTanque.clear();
+        cmbPeixes.setValue(null);
+        txtIdTanque.clear();
+    }
+
+    private void bloqueiaCampos() {
+        if (!tanqueApp.hasPermition()) {
             btnDeletarTanque.setDisable(true);
             btnAdicionarTanque.setDisable(true);
             btnAtualizarTanque.setDisable(true);
@@ -77,28 +117,6 @@ public class CadastroTanqueController {
             txtVolumeTanque.setDisable(true);
             cmbPeixes.setDisable(true);
         }
-
-        PeixeApp peixeApp = new PeixeApp();
-
-        for (Peixe peixe : peixeApp.getAll(Peixe.class)) {
-            peixesList.add(peixe.getEspecie());
-            mapNameTanqueToIdTanque.put(peixe.getEspecie(), peixe.id);
-        }
-
-        cmbPeixes.setItems(peixesList);
-
-        TanqueApp tanqueApp = new TanqueApp();
-
-        for (Tanque tanque : tanqueApp.getAll(Tanque.class)) {
-            obsListTanqueTableData.add(new TanqueTableData(tanque));
-        }
-
-        columnIdTanque.setCellValueFactory(new PropertyValueFactory<TanqueTableData, String>("tanqueId"));
-        columnNomeTanque.setCellValueFactory(new PropertyValueFactory<TanqueTableData, String>("nomeTanque"));
-        columnVolumeTanque.setCellValueFactory(new PropertyValueFactory<TanqueTableData, String>("volumeTanque"));
-        columnPeixeTanque.setCellValueFactory(new PropertyValueFactory<TanqueTableData, String>("peixeTanque"));
-
-        tblTanque.setItems(obsListTanqueTableData);
     }
 
     public void Voltar(ActionEvent event) throws Exception {
@@ -111,171 +129,86 @@ public class CadastroTanqueController {
         stage.show();
     }
 
-    public void CadastrarTanque(ActionEvent event) throws Exception {
+    public void Cadastrar(ActionEvent event) throws Exception {
         EstouraException ex = new EstouraException();
-        TanqueApp tanqueApp = new TanqueApp();
-        Tanque tanque;
-        PeixeApp peixeApp = new PeixeApp();
-        Peixe peixe = new Peixe();
-        Boolean hasDuplicate;
-        Boolean hasInvalidField;
 
-        hasInvalidField = ValidarCamposTanque();
-        int cod;
-        if (!hasInvalidField) {
-            cod = mapNameTanqueToIdTanque.get(cmbPeixes.getValue());
-            for (Peixe p : peixeApp.getAll(Peixe.class)) {
-                if (cmbPeixes.getValue() != null) {
-                    if (p.id == cod) {
-                        peixe = p;
-                    }
-                }
-            }
-            try {
-                tanque = new Tanque(peixe, txtNomeTanque.getText(), "OK", "OK", "OK", Double.parseDouble(txtVolumeTanque.getText()));
-                hasDuplicate = tanqueApp.hasDuplicate(txtNomeTanque.getText());
-                if (!hasDuplicate) {
-                    tanqueApp.Adicionar(tanque);
-                    ex.RaiseOK("Tanque cadastrado com sucesso!");
-                    stage = (Stage) btnAdicionarTanque.getScene().getWindow();
-                    stage.close();
-                    Parent root = FXMLLoader.load(getClass().getResource("CadastroTanque.fxml"));
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
-
-                }
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
-            }
+        try {
+            validarCampos();
+            Peixe peixe = peixeApp.getById(mapNameTanqueToIdTanque.get(cmbPeixes.getValue()));
+            Tanque tanque = new Tanque(peixe, txtNomeTanque.getText(), "OK", "OK", "OK", Double.parseDouble(txtVolumeTanque.getText()));
+            tanqueApp.hasDuplicate(tanque);
+            tanqueApp.Adicionar(tanque);
+            ex.RaiseOK("Tanque cadastrado com sucesso!");
+            atualizaPagina();
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
     }
 
-    public void DeletarTanque(ActionEvent event) throws Exception {
+    public void Deletar(ActionEvent event) throws Exception {
         EstouraException ex = new EstouraException();
-        Boolean hasError = false;
-        Boolean confirmed = false;
-        TanqueApp tanqueApp = new TanqueApp();
-        Tanque tanque = new Tanque();
-        TanqueTableData tanqueFromTable;
-        if (tblTanque.getSelectionModel().getSelectedItem() != null) {
-            tanqueFromTable = tblTanque.getSelectionModel().getSelectedItem();
-            List<Tanque> listTanque = tanqueApp.getAll(Tanque.class);
-            for (Tanque tank : listTanque) {
-                if (tank.id == Integer.parseInt(tanqueFromTable.getTanqueId())) {
-                    tanque = tank;
-                }
-            }
-            confirmed = ex.RaiseConfirmation("Tem certeza que deseja excluir o registro?");
-        } else {
-            ex.RaiseException("Não foi selecionado nenhum registro na tabela.");
-            hasError = true;
-        }
+        Tanque tanque;
+        try {
+            TanqueTableData tanqueFromTable = tblTanque.getSelectionModel().getSelectedItem();
 
-        if (!hasError && confirmed) {
-            try {
+            if (tanqueFromTable != null) {
+                tanque = tanqueApp.getById(Integer.parseInt(tanqueFromTable.getTanqueId()));
+            } else {
+                throw new Exception("Não foi selecionado nenhum registro na tabela.");
+            }
+            if (ex.RaiseConfirmation("Tem certeza que deseja excluir o registro?")) {
                 tanqueApp.delete(tanque);
                 ex.RaiseOK("Tanque deletado com sucesso!");
-                stage = (Stage) btnDeletarTanque.getScene().getWindow();
-                stage.close();
-                Parent root = FXMLLoader.load(getClass().getResource("CadastroTanque.fxml"));
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
+                atualizaPagina();
             }
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
     }
 
     String currentTanque = "";
 
-    public void EditarTanque(ActionEvent event) throws Exception {
+    public void Editar(ActionEvent event) throws Exception {
         EstouraException ex = new EstouraException();
-        Boolean hasError = false;
-        TanqueApp tanqueApp = new TanqueApp();
-        Tanque tanque = new Tanque();
-        TanqueTableData tanqueFromTable;
-        if (tblTanque.getSelectionModel().getSelectedItem() != null) {
-            tanqueFromTable = tblTanque.getSelectionModel().getSelectedItem();
-            List<Tanque> listTanque = tanqueApp.getAll(Tanque.class);
-            for (Tanque tank : listTanque) {
-                if (tank.id == Integer.parseInt(tanqueFromTable.getTanqueId())) {
-                    tanque = tank;
-                }
+        try {
+            TanqueTableData tanqueFromTable = tblTanque.getSelectionModel().getSelectedItem();
+            if (tanqueFromTable != null) {
+                currentTanque = tanqueFromTable.getNomeTanque();
+                txtNomeTanque.setText(tanqueFromTable.getNomeTanque());
+                txtVolumeTanque.setText(String.valueOf(tanqueFromTable.getVolumeTanque()));
+                cmbPeixes.setValue(tanqueFromTable.getPeixeTanque());
+                txtIdTanque.setText(String.valueOf(tanqueFromTable.getTanqueId()));
+            } else {
+                throw new Exception("Não foi selecionado nenhum registro na tabela.");
             }
-        } else {
-            ex.RaiseException("Não foi selecionado nenhum registro na tabela.");
-            hasError = true;
-        }
-
-        if (!hasError) {
-            try {
-                currentTanque = tanque.getNomeTanque();
-                txtNomeTanque.setText(tanque.getNomeTanque());
-                txtVolumeTanque.setText(String.valueOf(tanque.getVolume()));
-                cmbPeixes.setValue(tanque.getPeixe().getEspecie());
-                txtIdTanque.setText(String.valueOf(tanque.id));
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
-            }
+        } catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
     }
 
     public void AtualizarTanque(ActionEvent event) throws Exception {
         EstouraException ex = new EstouraException();
-        Boolean hasError = false;
-        Boolean hasDuplicate = false;
-        TanqueApp tanqueApp = new TanqueApp();
-        Tanque tanque = new Tanque();
-        PeixeApp peixeApp = new PeixeApp();
-        Peixe peixe = new Peixe();
 
-        if (txtIdTanque.getText().isBlank() || txtIdTanque.getText().isEmpty()) {
-            ex.RaiseException("Nenhum tanque selecionado para ser atualizado.");
-            hasError = true;
-        } else {
-            ValidarCamposTanque();
-            int codPeixe = mapNameTanqueToIdTanque.get(cmbPeixes.getValue());
-            for (Peixe p : peixeApp.getAll(Peixe.class)) {
-                if (p.id == codPeixe) {
-                    peixe = p;
-                }
-            }
-            int cod = Integer.parseInt(txtIdTanque.getText());
-            List<Tanque> listTanque = tanqueApp.getAll(Tanque.class);
-            for (Tanque tank : listTanque) {
-                if (tank.id == cod) {
-                    tanque = tank;
-                }
-            }
-            tanque.setNomeTanque(txtNomeTanque.getText());
-            tanque.setPeixe(peixe);
-            tanque.setVolume(Double.parseDouble(txtVolumeTanque.getText()));
-            if (!txtNomeTanque.getText().equals(currentTanque)) {
-                hasDuplicate = tanqueApp.hasDuplicate(txtNomeTanque.getText());
-            }
+        try {
+            if (txtIdTanque.getText().isBlank())
+                throw new Exception("Nada selecionado. Selecione um item na tabela e aperte Editar.");
+            Tanque old = tanqueApp.getById(Integer.parseInt(txtIdTanque.getText()));
+            validarCampos();
+            old.setNomeTanque(txtNomeTanque.getText());
+            old.setVolume(Double.parseDouble(txtVolumeTanque.getText()));
+            old.setPeixe(peixeApp.getById(mapNameTanqueToIdTanque.get(cmbPeixes.getValue())));
+            tanqueApp.hasDuplicate(old);
+            tanqueApp.update(old);
+            ex.RaiseOK("Atualizado com sucesso!");
+            atualizaPagina();
         }
-
-        if (!hasError && !hasDuplicate) {
-            try {
-                tanqueApp.update(tanque);
-                ex.RaiseOK("Tanque atualizado com sucesso!");
-                stage = (Stage) btnAtualizarTanque.getScene().getWindow();
-                stage.close();
-                Parent root = FXMLLoader.load(getClass().getResource("CadastroTanque.fxml"));
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                ex.RaiseException(e.getMessage());
-            }
+        catch (Exception e) {
+            ex.RaiseException(e.getMessage());
         }
-<<<<<<< HEAD
     }
 
-    public Boolean ValidarCamposTanque() {
-        EstouraException ex = new EstouraException();
+
+    public void validarCampos() throws Exception {
         Boolean hasInvalidField = false;
         String erros = "";
         if (txtNomeTanque.getText().isBlank()) {
@@ -296,26 +229,9 @@ public class CadastroTanqueController {
             hasInvalidField = true;
         }
 
-        if(hasInvalidField) {
-            ex.RaiseException(erros);
-=======
-        Tanque tanque = new Tanque(peixe, "OK", Double.parseDouble(txtVolumeTanque.getText()));
-
-        try {
-            tanqueApp.Adicionar(tanque);
-            ex.RaiseOK("Tanque cadastrado com sucesso!");
-            stage = (Stage) btnAdicionarTanque.getScene().getWindow();
-            stage.close();
-            Parent root = FXMLLoader.load(getClass().getResource("CadastroTanque.fxml"));
-            Scene scene = new Scene(root, 450, 300);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            ex.RaiseException(e.getMessage());
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
+        if (hasInvalidField) {
+            throw new Exception(erros);
         }
-
-        return hasInvalidField;
     }
 
 }

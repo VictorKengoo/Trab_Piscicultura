@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<<<<<<< HEAD
 
 <AnchorPane prefHeight="530.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.CadastroPeixeController">
    <children>
-      <Button fx:id="btnAdicionar" layoutX="547.0" layoutY="464.0" mnemonicParsing="false" onAction="#CadastrarPeixe" prefHeight="39.0" prefWidth="100.0" text="Cadastrar">
+      <Button fx:id="btnAdicionar" layoutX="547.0" layoutY="464.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="39.0" prefWidth="100.0" text="Cadastrar">
          <font>
             <Font size="14.0" />
          </font>
@@ -17,7 +16,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnDeletar" layoutX="423.0" layoutY="464.0" mnemonicParsing="false" onAction="#DeletarPeixe" prefHeight="39.0" prefWidth="91.0" text="Excluir">
+      <Button fx:id="btnDeletar" layoutX="423.0" layoutY="464.0" mnemonicParsing="false" onAction="#Deletar" prefHeight="39.0" prefWidth="91.0" text="Excluir">
          <font>
             <Font size="14.0" />
          </font>
@@ -47,12 +46,12 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="btnEditar" layoutX="151.0" layoutY="464.0" mnemonicParsing="false" onAction="#EditarPeixe" prefHeight="39.0" prefWidth="100.0" text="Editar">
+      <Button fx:id="btnEditar" layoutX="151.0" layoutY="464.0" mnemonicParsing="false" onAction="#Editar" prefHeight="39.0" prefWidth="100.0" text="Editar">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnAtualizar" layoutX="290.0" layoutY="464.0" mnemonicParsing="false" onAction="#AtualizarPeixe" prefHeight="39.0" prefWidth="100.0" text="Atualizar">
+      <Button fx:id="btnAtualizar" layoutX="290.0" layoutY="464.0" mnemonicParsing="false" onAction="#Atualizar" prefHeight="39.0" prefWidth="100.0" text="Atualizar">
          <font>
             <Font size="14.0" />
          </font>
@@ -75,51 +74,4 @@
       <Label layoutX="31.0" layoutY="261.0" text="pH máximo:" />
       <Label layoutX="31.0" layoutY="341.0" text="pH mínimo:" />
    </children>
-=======
-<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.CadastroPeixeController">
-    <children>
-        <TextField fx:id="txtEspecie" layoutX="88.0" layoutY="123.0" promptText="Espécie">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </TextField>
-        <TextField fx:id="txtTempMax" layoutX="88.0" layoutY="200.0" promptText="Temperatura máx.">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </TextField>
-        <TextField fx:id="txtTempMin" layoutX="88.0" layoutY="273.0" promptText="Temperatura min.">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </TextField>
-        <TextField fx:id="txtPhMax" layoutX="88.0" layoutY="351.0" promptText="pH máximo">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </TextField>
-        <TextField fx:id="txtPhMin" layoutX="88.0" layoutY="425.0" promptText="pH mínimo">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </TextField>
-        <Button layoutX="268.0" layoutY="513.0" mnemonicParsing="false" onAction="#CadastrarPeixe" text="Cadastrar">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </Button>
-        <Label layoutX="138.0" layoutY="50.0" text="Dados do Peixe">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </Label>
-        <Button fx:id="btnVoltar" layoutX="44.0" layoutY="513.0" mnemonicParsing="false" onAction="#Voltar"
-                prefHeight="39.0" prefWidth="100.0" text="Voltar">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </Button>
-    </children>
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
 </AnchorPane>

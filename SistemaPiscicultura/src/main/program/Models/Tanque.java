@@ -6,13 +6,14 @@ import Interface.EstouraException;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.util.ArrayList;
 
 @Entity
-public class Tanque extends Entidade {
+public class Tanque extends Entidade{
     //Declarações
-    @ManyToOne(targetEntity = Peixe.class, fetch = FetchType.EAGER)
+    @ManyToOne(targetEntity = Peixe.class,fetch = FetchType.EAGER)
     private Peixe Peixe;
     private String NomeTanque;
     private String NomePeixe;
@@ -22,7 +23,6 @@ public class Tanque extends Entidade {
     private Double Volume;
 
     //getters
-<<<<<<< HEAD
     public Peixe getPeixe() { return Peixe; }
     public String getNomeTanque() { return NomeTanque; }
     public String getNomePeixe() { return NomePeixe; }
@@ -39,34 +39,8 @@ public class Tanque extends Entidade {
     public void setStatusTemp(String StatusTemp) { this.StatusTemp = StatusTemp; }
     public void setStatusGeral(String StatusGeral) { this.StatusTemp = StatusGeral; }
     public void setVolume(Double volume) { this.Volume = volume; }
-=======
-    public Peixe getPeixe() {
-        return Peixe;
-    }
 
-    public String getStatus() {
-        return Status;
-    }
-
-    public Double getVolume() {
-        return Volume;
-    }
-
-    //setters
-    public void setPeixe(Peixe Peixe) {
-        this.Peixe = Peixe;
-    }
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
-
-    public void setStatus(String Status) {
-        this.Status = Status;
-    }
-
-    public void setVolume(Double volume) {
-        this.Volume = volume;
-    }
-
-    public Tanque() {
+    public Tanque () {
         this.Peixe = null;
         this.NomeTanque = "";
         this.NomePeixe = "";
@@ -74,13 +48,9 @@ public class Tanque extends Entidade {
         this.StatusTemp = "";
         this.StatusGeral = "";
         this.Volume = 0.0;
-    }
+    };
 
-<<<<<<< HEAD
     public Tanque (Peixe peixe, String nomeTanque, String statusPh, String statusTemp, String statusGeral, Double volume) throws Exception {
-=======
-    public Tanque(Peixe peixe, String status, Double volume) {
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
         this.Peixe = peixe;
         this.NomeTanque = nomeTanque;
         this.NomePeixe = peixe != null ? peixe.getEspecie() : null;
@@ -94,16 +64,7 @@ public class Tanque extends Entidade {
     //Validações
     @Override
     public void validar() throws Exception {
-<<<<<<< HEAD
         if (Volume <= 0) { throw new Exception("Temperatura mínima deve ser menor que temperatura máximo.\n"); }
-=======
-        EstouraException EE = new EstouraException();
-
-        //if(Peixe.id.isBlank()){ EE.RaiseException("Escreva quais peixes estarão neste tanque."); }
-        if (Volume < 0) {
-            EE.RaiseException("Valor de volume inválido.");
-        }
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
     }
 
 }

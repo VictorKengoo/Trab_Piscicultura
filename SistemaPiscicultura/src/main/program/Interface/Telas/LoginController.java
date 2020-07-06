@@ -1,26 +1,18 @@
 package Interface.Telas;
 
-<<<<<<< HEAD
 import Application.UsuarioApp;
 import javafx.scene.control.Button;
-=======
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
 import Application.LoginApp;
-import Models.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-<<<<<<< HEAD
 import Models.Usuario;
-=======
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
 
 public class LoginController {
     @FXML
@@ -43,16 +35,12 @@ public class LoginController {
         user.setUsuario(txtUsername.getText().trim());
         user.setSenha(txtPassword.getText());
 
-<<<<<<< HEAD
         if (logApp.doLogin(user)!=null) {
             for (Usuario us : usuarioApp.getAll(Usuario.class)) {
                 if (us.getUsuario().equals(txtUsername.getText().trim())) {
                     currentUser = us.getTipoUser();
                 }
             }
-=======
-        if (logApp.doLogin(user) != null) {
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
             lblStatus.setText("Status: Success");
             stage = (Stage) btnLogin.getScene().getWindow();
             stage.close();

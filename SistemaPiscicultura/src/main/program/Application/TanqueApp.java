@@ -1,19 +1,17 @@
 package Application;
 
 import Interface.EstouraException;
+import Models.Enums.TipoUsuario;
 import Models.Peixe;
 import Models.Tanque;
 import Repository.TanqueRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
-
 public class TanqueApp extends BaseApp<Tanque> {
 
-    private final TanqueRepository _tanqueRepository;
+    private TanqueRepository _tanqueRepository;
 
-<<<<<<< HEAD
     public static String errorMsg = "";
 
     public static Boolean showAtentionPopUp = false;
@@ -55,26 +53,19 @@ public class TanqueApp extends BaseApp<Tanque> {
         return tanqueList;
     }
 
-    public boolean hasDuplicate(String nomeTanque) {
-        EstouraException EE = new EstouraException();
-        TanqueApp tanqueApp = new TanqueApp();
-        ArrayList<String> listTanqueExistente = new ArrayList<String>();
-        for (Tanque tank : tanqueApp.getAll(Tanque.class)) {
-            listTanqueExistente.add(String.valueOf(tank.getNomeTanque()));
-        }
+    public boolean hasPermition(){
+       return Session.getInstance().getUsuarioLogado().getTipoUser().equals(TipoUsuario.ADMINISTRADOR.toString());
+    }
 
-        for (String tanqueExistente : listTanqueExistente) {
-            if (nomeTanque.toLowerCase().trim().equals(tanqueExistente.toLowerCase().trim())) {
-                EE.RaiseException("Já existe um tanque registrado com este nome.");
-                return true;
+    public void hasDuplicate(Tanque newTanque) throws Exception {
+        Tanque existente = _tanqueRepository.getByName(newTanque);
+        if (existente != null) {
+            if ((newTanque.id != existente.id) && (newTanque.getNomeTanque().toLowerCase().trim().equals(existente.getNomeTanque().toLowerCase().trim()))) {
+                throw new Exception("Já existe um registro com este nome.");
             }
         }
-        return false;
     }
-
-=======
-    public TanqueApp() {
-        _tanqueRepository = new TanqueRepository();
+    public Tanque getById(int id) throws Exception {
+        return super.getById("Tanque", id);
     }
->>>>>>> f9c76c88962873aaeb646bef4cfdd1676d5bfbb4
 }

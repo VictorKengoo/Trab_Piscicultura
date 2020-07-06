@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import java.util.Date;
 
 @Entity
-public class Monitoramento extends Entidade {
+public class Monitoramento extends Entidade{
 
     private int tanqueId;
-    private double temperatura;
+    private double  temperatura;
     private double ph;
     private String logData;
 
