@@ -108,6 +108,9 @@ public class UsuarioController {
             Usuario newUser = new Usuario(txtUsuario.getText(), txtSenha.getText(), cmbUserType.getValue().toString());
             usuarioApp.hasDuplicate(newUser);
 
+            String criptografada = usuarioApp.criptografaSenha(txtSenha.getText());
+            newUser.setSenha(criptografada);
+
             usuarioApp.Adicionar(newUser);
             ex.RaiseOK("Usuário cadastrado com sucesso!");
 
@@ -165,7 +168,8 @@ public class UsuarioController {
             validarCampos();
 
             oldUser.setUsuario(txtUsuario.getText());
-            oldUser.setSenha(txtSenha.getText());
+            String criptografada = usuarioApp.criptografaSenha(txtSenha.getText());
+            oldUser.setSenha(criptografada);
             oldUser.setTipoUser(cmbUserType.getValue().toString());
             usuarioApp.hasDuplicate(oldUser);
 

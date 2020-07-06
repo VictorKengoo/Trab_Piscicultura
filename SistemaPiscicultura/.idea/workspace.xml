@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e58a8dc6-f1ae-4170-91e8-5ba645c639c5" name="Default Changelist" comment="Limpeza/Melhoramentos no estrutura dos CRUDs em geral.&#10;Login revisado&#10;Todos os CRUDS agora revisados&#10;Singleton usado pra verificação de permissões aplicado ao MenuController para o botão de cadastro de Usuarios.">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_11_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_11_0.xml" afterDir="false" />
+    <list default="true" id="e58a8dc6-f1ae-4170-91e8-5ba645c639c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Application/EstoqueApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/EstoqueApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Cadastro.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroPeixeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroPeixeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroTanqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/CadastroTanqueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/Estoque.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/Estoque.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/EstoqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/EstoqueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb.db" beforeDir="false" afterPath="$PROJECT_DIR$/mydb.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Application/LoginApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/LoginApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/program/Application/UsuarioApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Application/UsuarioApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/program/Interface/Telas/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Interface/Telas/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Repository/EstoqueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/EstoqueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/program/Repository/PeixeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/program/Repository/PeixeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Application/EstoqueApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/EstoqueApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Application/LoginApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/LoginApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Application/UsuarioApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/UsuarioApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/Cadastro.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroPeixeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroPeixeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroTanqueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/CadastroTanqueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/Estoque.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/Estoque.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/EstoqueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/EstoqueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Interface/Telas/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Interface/Telas/UsuarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Repository/EstoqueRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Repository/EstoqueRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Repository/PeixeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Repository/PeixeRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +180,14 @@
       <option name="presentableId" value="Default" />
       <updated>1586515238659</updated>
     </task>
+    <task id="LOCAL-00001" summary="Limpeza/Melhoramentos no estrutura dos CRUDs em geral.&#10;Login revisado&#10;Todos os CRUDS agora revisados&#10;Singleton usado pra verificação de permissões aplicado ao MenuController para o botão de cadastro de Usuarios.">
+      <created>1594060652168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594060652168</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +196,17 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="MelhorandoCodigo" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -194,6 +218,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="MelhorandoCodigo" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="HEAD" />
@@ -209,6 +238,14 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Limpeza/Melhoramentos no estrutura dos CRUDs em geral.&#10;Login revisado&#10;Todos os CRUDS agora revisados&#10;Singleton usado pra verificação de permissões aplicado ao MenuController para o botão de cadastro de Usuarios." />
+    <option name="LAST_COMMIT_MESSAGE" value="Limpeza/Melhoramentos no estrutura dos CRUDs em geral.&#10;Login revisado&#10;Todos os CRUDS agora revisados&#10;Singleton usado pra verificação de permissões aplicado ao MenuController para o botão de cadastro de Usuarios." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="677" y="162" key="#Main" timestamp="1594005909726">
@@ -250,79 +287,80 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1593877606032" />
-    <state x="715" y="283" key="#xdebugger.evaluate" timestamp="1586561636842">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="715" y="254" key="#xdebugger.evaluate" timestamp="1594070928240">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="715" y="254" key="#xdebugger.evaluate/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594070928240" />
     <state x="715" y="283" key="#xdebugger.evaluate/0.0.1920.1160@0.0.1920.1160" timestamp="1586561636842" />
     <state x="718" y="382" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593981767796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="382" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593981767796" />
-    <state x="573" y="116" key="CommitChangelistDialog2" timestamp="1594038938493">
+    <state x="573" y="116" key="CommitChangelistDialog2" timestamp="1594060651369">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="573" y="116" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038938493" />
-    <state width="447" height="466" key="DebuggerActiveHint" timestamp="1593990625384">
+    <state x="573" y="116" key="CommitChangelistDialog2/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060651369" />
+    <state width="448" height="466" key="DebuggerActiveHint" timestamp="1594070384301">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="447" height="466" key="DebuggerActiveHint/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1593990625384" />
+    <state width="448" height="466" key="DebuggerActiveHint/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594070384301" />
     <state width="425" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1586542208032" />
-    <state x="225" y="86" width="1536" height="860" key="DiffContextDialog" timestamp="1594060572954">
+    <state x="225" y="86" width="1536" height="860" key="DiffContextDialog" timestamp="1594060744051">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="225" y="86" width="1536" height="860" key="DiffContextDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060572954" />
+    <state x="225" y="86" width="1536" height="860" key="DiffContextDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060744051" />
     <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1594037223334">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594037223334" />
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586516069651" />
     <state x="666" y="291" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1593572588519" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1594038226177">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1594071203026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038226177" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594071203026" />
     <state width="1877" height="386" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586550901306" />
     <state width="1877" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1593888664670" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1594038226177">
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1594071203026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038226177" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594071203026" />
     <state width="1877" height="386" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586550901306" />
     <state width="1877" height="230" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1593888664670" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1594038226177">
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1594071203026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038226177" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594071203026" />
     <state width="1877" height="386" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586550901306" />
     <state width="1877" height="230" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1593888664670" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1594038226177">
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1594071203026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038226177" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594071203026" />
     <state width="1877" height="386" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586550901306" />
     <state width="1877" height="230" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1593888664670" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1594038226177">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1594071203026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038226177" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594071203026" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586545662599" />
     <state width="1877" height="396" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1593882975257" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1594038226177">
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1594071203026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038226177" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594071203026" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586545662599" />
     <state width="1877" height="396" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1593882975257" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1594038226177">
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1594071203026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038226177" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594071203026" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586545662599" />
     <state width="1877" height="396" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1593882975257" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1594038226177">
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1594071203026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594038226177" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594071203026" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586545662599" />
     <state width="1877" height="396" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1593882975257" />
     <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1593910684288">
@@ -336,18 +374,22 @@
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594037234481" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586543654244" />
     <state x="440" y="105" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1593218355984" />
-    <state x="613" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1594060113581">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1594060747556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="613" y="254" key="VcsDiffUtil.ChangesDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060113581" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060747556" />
+    <state x="613" y="254" key="VcsDiffUtil.ChangesDialog" timestamp="1594060686742">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="613" y="254" key="VcsDiffUtil.ChangesDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060686742" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1594060253538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060253538" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1594060572954">
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1594061172644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594060572954" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/-3840.-173.3840.2120@0.0.1920.1040" timestamp="1594061172644" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1593968133066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -399,6 +441,11 @@
           <url>file://$PROJECT_DIR$/src/main/program/Application/MonitoramentoApp.java</url>
           <line>39</line>
           <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/program/Application/LoginApp.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

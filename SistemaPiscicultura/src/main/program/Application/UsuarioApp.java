@@ -3,6 +3,11 @@ package Application;
 import Models.Usuario;
 import Repository.UsuarioRepository;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class UsuarioApp extends BaseApp<Usuario> {
 
     private UsuarioRepository _usuaruioRepository;
@@ -18,6 +23,19 @@ public class UsuarioApp extends BaseApp<Usuario> {
                 throw new Exception("Já existe um usuário registrado com este nome.");
             }
         }
+    }
+
+    public String criptografaSenha(String senhaComum) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+        String senha = senhaComum;
+        MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
+        byte[] messageDigest = algorithm.digest(senha.getBytes(StandardCharsets.UTF_8));
+
+        StringBuilder hexString = new StringBuilder();
+        for (
+                byte b : messageDigest) {
+            hexString.append(String.format("%02X", 0xFF & b));
+        }
+        return hexString.toString();
     }
 
     public Usuario getById(int id) throws Exception {

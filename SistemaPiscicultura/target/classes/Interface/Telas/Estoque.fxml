@@ -1,58 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.*?>
-
 <AnchorPane prefHeight="350.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Telas.EstoqueController">
     <children>
-        <Button fx:id="btnAdicionar" layoutX="498.0" layoutY="283.0" mnemonicParsing="false" onAction="#CadastrarEstoque" prefHeight="39.0" prefWidth="100.0" text="Cadastrar">
+        <Button fx:id="btnAdicionar" layoutX="498.0" layoutY="283.0" mnemonicParsing="false" onAction="#Cadastrar"
+                prefHeight="39.0" prefWidth="100.0" text="Cadastrar">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </Button>
-        <Button fx:id="btnVoltar" layoutX="30.0" layoutY="283.0" mnemonicParsing="false" onAction="#Voltar" prefHeight="39.0" prefWidth="82.0" text="Voltar">
+        <Button fx:id="btnVoltar" layoutX="30.0" layoutY="283.0" mnemonicParsing="false" onAction="#Voltar"
+                prefHeight="39.0" prefWidth="82.0" text="Voltar">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </Button>
-        <TextField fx:id="txtQuantidade" layoutX="31.0" layoutY="168.0" prefHeight="30.0" prefWidth="157.0" promptText="Quantidade">
+        <TextField fx:id="txtQuantidade" layoutX="31.0" layoutY="168.0" prefHeight="30.0" prefWidth="157.0"
+                   promptText="Quantidade">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </TextField>
         <Label layoutX="32.0" layoutY="138.0" text="Quantidade:">
             <font>
-                <Font size="14.0" />
-            </font></Label>
-        <Button fx:id="btnDeletar" layoutX="383.0" layoutY="283.0" mnemonicParsing="false" onAction="#DeletarEstoque" prefHeight="39.0" prefWidth="91.0" text="Excluir">
-            <font>
-                <Font size="14.0" />
-            </font></Button>
-        <Label layoutX="30.0" layoutY="49.0" text="Produto:">
-            <font>
-                <Font size="14.0" />
-            </font></Label>
-        <TextField fx:id="txtProduto" layoutX="31.0" layoutY="83.0" prefHeight="30.0" prefWidth="157.0" promptText="Produto">
-            <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
-        </TextField>
-        <Button fx:id="btnEditar" layoutX="137.0" layoutY="283.0" mnemonicParsing="false" onAction="#EditarEstoque" prefHeight="39.0" prefWidth="100.0" text="Editar">
+        </Label>
+        <Button fx:id="btnDeletar" layoutX="383.0" layoutY="283.0" mnemonicParsing="false" onAction="#Deletar"
+                prefHeight="39.0" prefWidth="91.0" text="Excluir">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </Button>
-        <Button fx:id="btnAtualizar" layoutX="259.0" layoutY="283.0" mnemonicParsing="false" onAction="#AtualizarEstoque" prefHeight="39.0" prefWidth="100.0" text="Atualizar">
+        <Label layoutX="30.0" layoutY="49.0" text="Produto:">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="txtProduto" layoutX="31.0" layoutY="83.0" prefHeight="30.0" prefWidth="157.0"
+                   promptText="Produto">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <Button fx:id="btnEditar" layoutX="137.0" layoutY="283.0" mnemonicParsing="false" onAction="#Editar"
+                prefHeight="39.0" prefWidth="100.0" text="Editar">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="btnAtualizar" layoutX="259.0" layoutY="283.0" mnemonicParsing="false" onAction="#Atualizar"
+                prefHeight="39.0" prefWidth="100.0" text="Atualizar">
+            <font>
+                <Font size="14.0"/>
             </font>
         </Button>
         <TableView fx:id="tblEstoque" layoutX="219.0" layoutY="26.0" prefHeight="212.0" prefWidth="379.0">
             <columns>
-                <TableColumn fx:id="columnIdEstoque" prefWidth="40.0" text="Id" />
-                <TableColumn fx:id="columnProduto" prefWidth="167.0" text="Produto" />
-                <TableColumn fx:id="columnQuantidade" prefWidth="171.0" text="Quantidade" />
+                <TableColumn fx:id="columnIdEstoque" prefWidth="40.0" text="Id"/>
+                <TableColumn fx:id="columnProduto" prefWidth="167.0" text="Produto"/>
+                <TableColumn fx:id="columnQuantidade" prefWidth="171.0" text="Quantidade"/>
             </columns>
         </TableView>
         <Label layoutX="30.0" layoutY="240.0" text="Id:" visible="false" />
